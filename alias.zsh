@@ -5,3 +5,4 @@ alias nrd="npm run dev"
 alias nrw="npm run watch"
 alias cl="clear"
 alias bigsur="xcode-select --install"
+# testing
