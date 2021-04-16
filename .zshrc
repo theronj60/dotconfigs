@@ -11,6 +11,7 @@ export ZSH="/Users/theronjoe/.oh-my-zsh"
 
 ZSH_THEME="typewritten"
 
+export TYPEWRITTEN_SYMBOL="->"
 export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
 export TYPEWRITTEN_RELATIVE_PATH="off"
 export TYPEWRITTEN_COLORS="arrow:#266b85"
