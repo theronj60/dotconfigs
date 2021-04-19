@@ -2,7 +2,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 set number
-set linespace=20
+set linespace=30
 syntax enable
 
 "-------------Auto-Commands--------------"
