@@ -14,6 +14,7 @@ alias bigsur="xcode-select --install"
 # dev commands
 alias nrd="npm run dev"
 alias nrw="npm run watch"
+alias pa="php artisan"
 
 # git
 alias undocommit="git reset HEAD~1"
