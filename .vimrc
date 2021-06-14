@@ -4,6 +4,7 @@ filetype plugin indent on
 set number
 set linespace=30
 syntax enable
+imap ii <Esc>
 
 "-------------Auto-Commands--------------"
 
