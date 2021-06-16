@@ -3,6 +3,7 @@
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+export PATH="/opt/homebrew/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/theronjoe/.oh-my-zsh"

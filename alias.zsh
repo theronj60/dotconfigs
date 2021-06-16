@@ -16,5 +16,8 @@ alias nrd="npm run dev"
 alias nrw="npm run watch"
 alias pa="php artisan"
 
+#software
+alias python="python3"
+
 # git
 alias undocommit="git reset HEAD~1"
