@@ -25,9 +25,16 @@ colorscheme onedark
 set noshowmode
 set laststatus=2
 filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
 set number
 set linespace=30
 syntax enable
+
+"-------------Rust--------------"
+"Rust configs"
+
+let g:rustfmt_autosave = 1
 
 "-------------Key-Bindings--------------"
 "Custom key bindings"
