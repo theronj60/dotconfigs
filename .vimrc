@@ -47,4 +47,8 @@ imap ii <Esc>
 augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc source %
+	"Workaround for creating transparent bg
+    autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+            \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+            \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END
