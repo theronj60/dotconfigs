@@ -30,16 +30,22 @@ set shiftwidth=4
 set number
 set linespace=30
 syntax enable
+set backspace=indent,eol,start
 
 "-------------Rust--------------"
 "Rust configs"
 
 let g:rustfmt_autosave = 1
 
+"-------------Python--------------"
+"Python configs"
+
+let g:python_highlight_all = 1
+
 "-------------Key-Bindings--------------"
 "Custom key bindings"
 
-imap ii <Esc>
+imap jk <Esc>
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save."
