@@ -44,15 +44,19 @@ colorscheme onedark
 "-------------Vim Setup--------------"
 "vim settings"
 
+syntax enable
+filetype plugin indent on
 set noshowmode
 set laststatus=2
-filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set number
 set linespace=30
-syntax enable
 set backspace=indent,eol,start
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 "-------------Rust--------------"
 "Rust configs"

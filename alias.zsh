@@ -27,3 +27,5 @@ alias python="python3"
 
 # git
 alias undocommit="git reset HEAD~1"
+alias fetch="git fetch origin"
+alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\" | xargs git branch -d"
