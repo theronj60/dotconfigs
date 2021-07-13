@@ -21,6 +21,8 @@ alias bigsur="xcode-select --install"
 alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
+alias php7="brew-php-switcher 7.4"
+alias php8="brew-php-switcher 8.0"
 
 #software
 alias python="python3"
@@ -29,3 +31,4 @@ alias python="python3"
 alias undocommit="git reset HEAD~1"
 alias fetch="git fetch origin"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\" | xargs git branch -d"
+alias rustmux="tmux new -s rust-vim"
