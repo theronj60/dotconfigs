@@ -30,7 +30,7 @@ alias rustmux="tmux new -s rust-vim"
 
 # git ======================== 
 alias ga="git add ."
-alias gm="git commit -m"
+alias gc="git commit -m"
 alias undocommit="git reset HEAD~1"
 alias fetch="git fetch origin"
 alias pullmaster="git pull origin master"
