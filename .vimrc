@@ -4,19 +4,21 @@ execute pathogen#infect()
 "Color settings"
 
 set background=dark
+set termguicolors
+
 if !has('gui_running')
 	set t_Co=256
 endif
 " Rainbow Parenthesis
 let g:rbpt_colorpairs = [
     "\ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
+    "\ ['Darkblue',    'SeaGreen3'],
     "\ ['darkgray',    'DarkOrchid3'],
     "\ ['darkgreen',   'firebrick3'],
     "\ ['darkcyan',    'RoyalBlue3'],
     "\ ['darkred',     'SeaGreen3'],
     "\ ['darkmagenta', 'DarkOrchid3'],
-    "\ ['brown',       'firebrick3'],
+    \ ['brown',       'firebrick3'],
     "\ ['gray',        'RoyalBlue3'],
     "\ ['black',       'SeaGreen3'],
     "\ ['darkmagenta', 'DarkOrchid3'],
@@ -39,6 +41,7 @@ let g:lightline = {
 	\ 	'gitbranch': 'FugitiveHead'
 	\ },
 \}
+
 colorscheme onedark
 
 "-------------Vim Setup--------------"
@@ -57,6 +60,23 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+"-------------devSyntax------------"
+let g:vim_vue_plugin_config = {
+	\'syntax': {
+	\   'template': ['html'],
+	\   'script': ['javascript', 'typescript'],
+    \   'style': ['css'],
+	\   'i18n': ['json', 'yaml'],
+	\   'route': 'json',
+	\},
+	\'full_syntax': ['json'],
+	\'initial_indent': ['i18n', 'i18n.json', 'yaml'],
+	\'attribute': 1,
+	\'keyword': 1,
+	\'foldexpr': 0,
+	\'debug': 0,
+\}
 
 "-------------Rust--------------"
 "Rust configs"

@@ -11,6 +11,8 @@ export ZSH="/Users/theronjoe/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 ZSH_THEME="typewritten"
+# ZSH_THEME="daivasmara"
+# ZSH_THEME="halil"
 
 export TYPEWRITTEN_SYMBOL="->"
 export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
@@ -22,7 +24,17 @@ export TYPEWRITTEN_COLORS="arrow:#266b85"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git laravel web-search zsh-syntax-highlighting z)
+
+plugins=(
+	laravel
+	web-search
+	zsh-syntax-highlighting
+	z
+)
+
+# Add colors to Terminal
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 source $ZSH/oh-my-zsh.sh
 
@@ -32,4 +44,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # Alias are being loaded from the /.oh-my-zsh/custom folder. 
+
 
