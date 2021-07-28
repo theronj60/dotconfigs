@@ -1,8 +1,12 @@
 # zsh ======================== 
-alias reloadzsh="source ~/.zshrc && echo  $'\e]9;zsh refreshed!\007'"
+# alias reloadzsh="source ~/.zshrc && echo  $'\e]9;zsh refreshed!\007'"
+alias reloadzsh="source ~/.zshrc && echo 'Zsh Refreshed!'"
+alias reloadtmux="tmux source ~/.tmux.conf && echo 'Tmux Refreshed!'"
 alias customzsh="cd ~/.oh-my-zsh/custom"
 alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc" 
+alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="vim ~/.config/nvim/init.vim" 
+alias plugconfig="vim ~/.config/nvim/plug.vim"
 alias aliasconfig="vim ~/dotconfigs/alias.zsh"
 
 # system ======================== 
@@ -26,18 +30,21 @@ alias php8="brew-php-switcher 8.0"
 
 # software ======================== 
 alias python="python3"
+alias vim="nvim"
 alias rustmux="tmux new -s rust-vim"
 
 # git ======================== 
+alias g="git"
 alias ga="git add ."
 alias gc="git commit -m"
 alias undocommit="git reset HEAD~1"
 alias fetch="git fetch origin"
 alias pullmaster="git pull origin master"
+alias pullmain="git pull origin main"
+alias pulldev="git pull origin main"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\" | xargs git branch -d"
 
 # vim ========================
-alias pathogen="cd ~/.vim/bundle && git clone"
 
 # tmux ======================== 
 alias attach="tmux attach -t"
