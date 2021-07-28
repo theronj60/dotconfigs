@@ -91,7 +91,7 @@ imap jk <Esc>
 
 augroup autosourcing
     autocmd!
-    autocmd BufWritePost .config/nvim/init.vim source %
+    autocmd BufWritePost init.vim source %
 	autocmd	VimEnter * RainbowParenthesesToggle
 	autocmd Syntax * RainbowParenthesesLoadRound
 	autocmd Syntax * RainbowParenthesesLoadSquare
