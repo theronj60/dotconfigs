@@ -9,6 +9,6 @@ alias.zsh is usually found or created in the oh-my-zsh custom folder if you
 
 ## Neovim
 I made the switch from Vim to [Neovim](https://neovim.io) <br>
-Neovim was install through [Homebrew](https://brew.sh/) with ``brew install neovim`` <br>
+Neovim was installed through [Homebrew](https://brew.sh/) with ``brew install neovim`` <br>
 The package manager being used is [vim-plug](https://github.com/junegunn/vim-plug)
 
