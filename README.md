@@ -12,3 +12,6 @@ I made the switch from Vim to [Neovim](https://neovim.io) <br>
 Neovim was installed through [Homebrew](https://brew.sh/) with ``brew install neovim`` <br>
 The package manager being used is [vim-plug](https://github.com/junegunn/vim-plug)
 
+## Tmux
+I have started using tmux. Plugins and settings found in [tmux-config](https://github.com/theronj60/dotconfigs/blob/master/.tmux.conf)
+
