@@ -51,8 +51,9 @@ set linespace=30
 set backspace=indent,eol,start
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-u> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
 
 "-------------devSyntax------------"
 let g:vim_vue_plugin_config = {
