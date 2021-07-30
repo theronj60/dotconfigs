@@ -47,12 +47,9 @@ set laststatus=2
 set tabstop=4
 set shiftwidth=4
 set number
+set relativenumber
 set linespace=30
 set backspace=indent,eol,start
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-u> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 
 
 "-------------devSyntax------------"

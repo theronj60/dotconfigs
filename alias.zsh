@@ -31,7 +31,6 @@ alias php8="brew-php-switcher 8.0"
 # software ======================== 
 alias python="python3"
 alias vim="nvim"
-alias rustmux="tmux new -s rust-vim"
 
 # git ======================== 
 alias g="git"
@@ -47,7 +46,11 @@ alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\"
 # vim ========================
 
 # tmux ======================== 
+alias rustmux="tmux new -s rust-vim"
 alias attach="tmux attach -t"
+# the below commands only run while tmux is running
+alias start="tmux split-window -v -p 30 && tmux split-window -h -p 50"
+alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" 
 
 # key ======================== 
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"

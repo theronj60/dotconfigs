@@ -16,7 +16,7 @@ ZSH_THEME="typewritten"
 
 export TYPEWRITTEN_SYMBOL="->"
 export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
-export TYPEWRITTEN_RELATIVE_PATH="off"
+export TYPEWRITTEN_RELATIVE_PATH="home"
 export TYPEWRITTEN_COLORS="arrow:#266b85"
 
 # Which plugins would you like to load?
