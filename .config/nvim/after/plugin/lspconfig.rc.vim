@@ -80,6 +80,18 @@ local on_attach = function(client, bufnr)
 	}
 	end	
 	
+	nvim_lsp.tsserver.setup{
+		on_attach = on_attach,
+	}
+	nvim_lsp.svelte.setup{
+		on_attach = on_attach,
+	}
+	nvim_lsp.vuels.setup{
+		on_attach = on_attach,
+	}
+	nvim_lsp.tailwindcss.setup{
+		on_attach = on_attach,
+	}
 	nvim_lsp.rls.setup {
 		on_attach = on_attach,
 		settings = {
@@ -87,11 +99,14 @@ local on_attach = function(client, bufnr)
 				unstable_features = true,
 				build_on_save = false,
 				all_features = true,
-				--cmd = { "rls" },
-				--filetypes = { "rust" },
-				--root_dir = root_pattern("Cargo.toml"),
 			},
 		},
+	}
+	nvim_lsp.clangd.setup{
+		on_attach = on_attach,
+	}
+	nvim_lsp.jedi_language_server.setup{
+		on_attach = on_attach,
 	}
 
 EOF

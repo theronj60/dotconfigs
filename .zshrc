@@ -4,6 +4,13 @@
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 export PATH="/opt/homebrew/sbin:$PATH"
+# Created by `pipx` on 2021-08-02 22:07:37
+export PATH="$PATH:/Users/theronjoe/.local/bin"
+export PATH="/Users/theronjoe/tailwindcss-language-server:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/theronjoe/.oh-my-zsh"
@@ -44,5 +51,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # Alias are being loaded from the /.oh-my-zsh/custom folder. 
+
 
 

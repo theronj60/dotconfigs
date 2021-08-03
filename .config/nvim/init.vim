@@ -40,6 +40,7 @@ colorscheme onedark
 "-------------Vim Setup--------------"
 "vim settings"
 
+set encoding=UTF-8
 syntax enable
 filetype plugin indent on
 set noshowmode
@@ -50,6 +51,10 @@ set number
 set relativenumber
 set linespace=30
 set backspace=indent,eol,start
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-u> :NERDTree<CR>
+nnoremap <C-i> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 
 "-------------devSyntax------------"
