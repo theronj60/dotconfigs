@@ -52,7 +52,7 @@ set relativenumber
 set linespace=30
 set backspace=indent,eol,start
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-u> :NERDTree<CR>
+nnoremap <C-o> :NERDTree<CR>
 nnoremap <C-i> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
@@ -88,6 +88,7 @@ let g:python_highlight_all = 1
 "Custom key bindings"
 
 imap jk <Esc>
+"imap <leader>j :
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save."

@@ -13,6 +13,7 @@ call plug#begin(stdpath('config') . '/plugged')
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'cohama/lexima.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -28,6 +29,7 @@ Plug 'kristijanhusak/defx-icons'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kabouzeid/nvim-lspinstall'
 Plug 'joshdick/onedark.vim'
 
 " removed, still setting up

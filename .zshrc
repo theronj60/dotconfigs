@@ -6,7 +6,6 @@ export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 export PATH="/opt/homebrew/sbin:$PATH"
 # Created by `pipx` on 2021-08-02 22:07:37
 export PATH="$PATH:/Users/theronjoe/.local/bin"
-export PATH="/Users/theronjoe/tailwindcss-language-server:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"

@@ -3,7 +3,7 @@ if !exists('g:lspconfig')
 endif
 
 lua << EOF
---vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("debug")
 EOF
 
 lua << EOF
@@ -80,6 +80,65 @@ local on_attach = function(client, bufnr)
 	}
 	end	
 	
+	nvim_lsp.diagnosticls.setup {
+	  on_attach = on_attach,
+	  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+	  init_options = {
+			linters = {
+			  eslint = {
+				command = 'eslint_d',
+				rootPatterns = { '.git' },
+				debounce = 100,
+				args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+				sourceName = 'eslint_d',
+				parseJson = {
+				  errorsRoot = '[0].messages',
+				  line = 'line',
+				  column = 'column',
+				  endLine = 'endLine',
+				  endColumn = 'endColumn',
+				  message = '[eslint] ${message} [${ruleId}]',
+				  security = 'severity'
+				},
+				securities = {
+				  [2] = 'error',
+				  [1] = 'warning'
+				}
+			  },
+			},
+			filetypes = {
+			  vue = 'eslint',
+			  javascript = 'eslint',
+			  javascriptreact = 'eslint',
+			  typescript = 'eslint',
+			  typescriptreact = 'eslint',
+			},
+			formatters = {
+			  eslint_d = {
+				command = 'eslint_d',
+				args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+				rootPatterns = { '.git' },
+			  },
+			  prettier = {
+				command = 'prettier',
+				args = { '--stdin-filepath', '%filename' }
+			  }
+			},
+			formatFiletypes = {
+			  css = 'prettier',
+			  javascript = 'eslint_d',
+			  javascriptreact = 'eslint_d',
+			  json = 'prettier',
+			  scss = 'prettier',
+			  less = 'prettier',
+			  typescript = 'eslint_d',
+			  typescriptreact = 'eslint_d',
+			  json = 'prettier',
+			  markdown = 'prettier',
+			}
+		  }
+	}
+
 	nvim_lsp.tsserver.setup{
 		on_attach = on_attach,
 	}
@@ -89,24 +148,46 @@ local on_attach = function(client, bufnr)
 	nvim_lsp.vuels.setup{
 		on_attach = on_attach,
 	}
-	nvim_lsp.tailwindcss.setup{
-		on_attach = on_attach,
-	}
-	nvim_lsp.rls.setup {
-		on_attach = on_attach,
+	nvim_lsp.rust_analyzer.setup({
+		on_attach=on_attach,
 		settings = {
-			rust = {
-				unstable_features = true,
-				build_on_save = false,
-				all_features = true,
-			},
-		},
-	}
+			["rust-analyzer"] = {
+				assist = {
+					importGranularity = "module",
+					importPrefix = "by_self",
+				},
+				cargo = {
+					loadOutDirsFromCheck = true
+				},
+				procMacro = {
+					enable = true
+				},
+			}
+		}
+	})
 	nvim_lsp.clangd.setup{
 		on_attach = on_attach,
 	}
 	nvim_lsp.jedi_language_server.setup{
 		on_attach = on_attach,
 	}
+	require'lspinstall'.setup() -- important
+
+	local servers = require'lspinstall'.installed_servers()
+	for _, server in pairs(servers) do
+	  require'lspconfig'[server].setup{}
+	end
+
+	-- icon
+	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+	  vim.lsp.diagnostic.on_publish_diagnostics, {
+		underline = true,
+		-- This sets the spacing and the prefix, obviously.
+		virtual_text = {
+		  spacing = 4,
+		  prefix = ''
+		}
+	  }
+	)
 
 EOF
