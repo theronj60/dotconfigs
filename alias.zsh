@@ -1,5 +1,4 @@
 # zsh ======================== 
-# alias reloadzsh="source ~/.zshrc && echo  $'\e]9;zsh refreshed!\007'"
 alias reloadzsh="source ~/.zshrc && echo 'Zsh Refreshed!'"
 alias reloadtmux="tmux source ~/.tmux.conf && echo 'Tmux Refreshed!'"
 alias customzsh="cd ~/.oh-my-zsh/custom"
@@ -13,13 +12,17 @@ alias aliasconfig="vim ~/dotconfigs/alias.zsh"
 alias home="cd ~"
 alias cl="clear"
 alias la="ls -a"
-alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
 # Lock the screen (when going AFK)
 alias afk="sleep 1 && pmset displaysleepnow"
 alias :q="exit"
 # when creating a sym link - original file -> target
 alias createlink="ln -nfs "
 alias bigsur="xcode-select --install"
+
+# brew ======================== 
+alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+alias startgres="brew services start postgresql"
+alias stopgres="brew services stop postgresql"
 
 # dev commands ======================== 
 alias nrd="npm run dev"
@@ -36,11 +39,12 @@ alias vim="nvim"
 alias g="git"
 alias ga="git add ."
 alias gc="git commit -m"
+alias grpublic="git restore *public"
 alias undocommit="git reset HEAD~1"
 alias fetch="git fetch origin"
 alias pullmaster="git pull origin master"
 alias pullmain="git pull origin main"
-alias pulldev="git pull origin main"
+alias pulldev="git pull origin dev"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\" | xargs git branch -d"
 
 # vim ========================
@@ -56,7 +60,9 @@ alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux 
 # key ======================== 
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"
 
-# Functions ======================== 
+# Functions ========================
+# copy contents of a file
 function copy() {
 	cat "$@" | pbcopy
 }
+# add function for running .py and .rs files also .cpp
