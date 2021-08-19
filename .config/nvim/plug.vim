@@ -32,21 +32,6 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'joshdick/onedark.vim'
 
-" removed, still setting up
-"Plug 'tpope/vim-sensible'
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-"Plug 'scrooloose/nerdtree'
-"Plug 'valloric/youcompleteme'
-"Plug 'itchyny/lightline.vim'
-"Plug 'octol/vim-cpp-enhanced-highlight'
-"Plug 'pangloss/vim-javascript'
-"Plug 'vim-python/python-syntax'
-"Plug 'arzg/vim-rust-syntax-ext'
-"Plug 'rust-lang/rust.vim'
-"Plug 'leafOfTree/vim-vue-plugin'
-"Plug 'leafOfTree/vim-svelte-plugin'
-"Plug 'ryanoasis/vim-devicons'
-"Plug 'sheerun/vim-polyglot'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

@@ -62,6 +62,7 @@ alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to c
 
 # Functions ========================
 # copy contents of a file
+# ex. copy file-name
 function copy() {
 	cat "$@" | pbcopy
 }
