@@ -71,9 +71,9 @@ imap jk <Esc>
 vmap <leader>jk <Esc>
 
 " Vim buffers
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
-nnoremap <leader>d :bd<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bd :bd<CR>
 
 " clear highlight search
 nnoremap <leader>cl :let @/ = ""<CR> 
@@ -91,6 +91,11 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 nnoremap <C-u> <C-u>zzzv
 nnoremap <C-d> <C-d>zzzv
+
+"---------Windows---------"
+nnoremap <leader>ss :split<return><C-w>w
+nnoremap <leader>sv :vsplit<return><C-w>w
+nnoremap <leader><Space> <C-w>w
 
 "---------text---------"
 " moving text
