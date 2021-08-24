@@ -24,13 +24,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
-Plug 'kristijanhusak/defx-git'
-Plug 'kristijanhusak/defx-icons'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'joshdick/onedark.vim'
+Plug 'terrortylor/nvim-comment'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

@@ -51,10 +51,12 @@ alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\"
 
 # tmux ======================== 
 alias rustmux="tmux new -s rust-vim"
+alias devmux="tmux new -s web-dev"
 alias attach="tmux attach -t"
 # the below commands only run while tmux is running
 # alias start="tmux split-window -v -p 30 && tmux split-window -h -p 50"
-alias dev="tmux rename-session dev && tmux split-window -v -p 30"
+# alias dev="tmux rename-session dev && tmux split-window -v -p 30"
+alias webdev="tmux rename-window code && tmux new-window -n npm"
 alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" 
 
 # key ======================== 
@@ -66,4 +68,10 @@ alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to c
 function copy() {
 	cat "$@" | pbcopy
 }
+# pbpaste -> paste
+# can pipe into file
+# ex.
+# pbpaste > text.txt
 # add function for running .py and .rs files also .cpp
+
+
