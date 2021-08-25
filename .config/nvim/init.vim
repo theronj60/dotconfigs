@@ -117,12 +117,16 @@ nnoremap <leader>k :m.-2<CR>==
 " clipboard --c = copy --p = paste
 vnoremap <leader>c "*y<CR>
 nnoremap <leader>v "*p<CR>
+" new line up/down
+nnoremap lo o<Esc>
+nnoremap Lo O<Esc>
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save."
 
 augroup autosourcing
     autocmd!
+
     autocmd BufWritePost init.vim source %
 	autocmd	VimEnter * RainbowParenthesesToggle
 	autocmd Syntax * RainbowParenthesesLoadRound

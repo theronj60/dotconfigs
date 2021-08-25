@@ -50,8 +50,10 @@ alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\"
 # vim ========================
 
 # tmux ======================== 
-alias rustmux="tmux new -s rust-vim"
-alias devmux="tmux new -s web-dev"
+alias rustmux="tmux new -s -rust-"
+alias pymux="tmux new -s -python-"
+alias cmux="tmux new -s -cpp-"
+alias devmux="tmux new -s -web-"
 alias attach="tmux attach -t"
 # the below commands only run while tmux is running
 # alias start="tmux split-window -v -p 30 && tmux split-window -h -p 50"
