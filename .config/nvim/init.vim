@@ -26,7 +26,7 @@ let g:rbpt_loadcmd_toggle = 0
 
 " Status Line
 let g:lightline = {
-	\ 'colorscheme': 'onedark',
+	\ 'colorscheme': 'onehalfdark',
 	\ 'active': {
 	\	'left': [ [ 'mode', 'paste' ],
 	\		[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -36,7 +36,7 @@ let g:lightline = {
 	\ },
 \}
 
-colorscheme onedark
+colorscheme onehalfdark
 
 "-------------Vim Setup--------------"
 "vim settings"
@@ -53,6 +53,15 @@ set relativenumber
 set linespace=30
 set backspace=indent,eol,start
 
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader><c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 "-------------Rust--------------"
 "Rust configs"
 
@@ -121,7 +130,7 @@ augroup autosourcing
 	autocmd Syntax * RainbowParenthesesLoadBraces
 	autocmd Syntax * RainbowParenthesesLoadChevrons
 	"Workaround for creating transparent bg
-    autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-            \ |    highlight LineNr     ctermbg=NONE guibg=NONE
-            \ |    highlight SignColumn ctermbg=NONE guibg=NONE
+    " autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+    "         \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+    "         \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END

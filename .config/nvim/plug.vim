@@ -22,12 +22,16 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'neovim/nvim-lspconfig'
+Plug 'phpactor/phpactor',
 Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'joshdick/onedark.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'terrortylor/nvim-comment'
 
 " List ends here. Plugins become visible to Vim after this call.
