@@ -118,8 +118,8 @@ nnoremap <leader>k :m.-2<CR>==
 vnoremap <leader>c "*y<CR>
 nnoremap <leader>v "*p<CR>
 " new line up/down
-nnoremap lo o<Esc>
-nnoremap Lo O<Esc>
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
 
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save."

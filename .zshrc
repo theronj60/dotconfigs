@@ -14,6 +14,12 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/theronjoe/.oh-my-zsh"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--layout=reverse --border'
+export FZF_COMPLETION_OPTS='--layout=reverse --border'
+# get and configure bat for fzf preview
+
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 ZSH_THEME="typewritten"
@@ -50,6 +56,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 # Alias are being loaded from the /.oh-my-zsh/custom folder. 
-
 
 

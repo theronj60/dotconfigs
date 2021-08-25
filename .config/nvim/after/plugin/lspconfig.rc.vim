@@ -152,9 +152,12 @@ local on_attach = function(client, bufnr)
 	nvim_lsp.vuels.setup{
 		on_attach = on_attach,
 	}
-	nvim_lsp.phpactor.setup{
-		on_attach = on_attach,
-	}
+	--nvim_lsp.phpactor.setup{
+	--	on_attach = on_attach,
+	--}
+	--nvim_lsp.intelephense.setup{
+	--	on_attach = on_attach,
+	--	}
 	nvim_lsp.rust_analyzer.setup({
 		on_attach=on_attach,
 		settings = {

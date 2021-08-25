@@ -6,6 +6,7 @@ nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent> <leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <silent> <leader>br <cmd>Telescope file_browser<cr>
 " nnoremap <silent> gd <cmd>lua require('telescope.builtin').edit_dot()<cr>
 
 " functions

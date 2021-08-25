@@ -53,13 +53,14 @@ alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\"
 alias rustmux="tmux new -s -rust-"
 alias pymux="tmux new -s -python-"
 alias cmux="tmux new -s -cpp-"
-alias devmux="tmux new -s -web-"
+alias larmux="tmux new -s -laravel-"
+alias jsmux="tmux new -s -javascript-"
+# attach requires a specified target
 alias attach="tmux attach -t"
 # the below commands only run while tmux is running
-# alias start="tmux split-window -v -p 30 && tmux split-window -h -p 50"
-# alias dev="tmux rename-session dev && tmux split-window -v -p 30"
-alias webdev="tmux rename-window code && tmux new-window -n npm"
-alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" 
+alias lardev="tmux rename-window code && tmux new-window -n watch"
+alias jsdev="tmux rename-window code && tmux new-window -n npm"
+# alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" -- example
 
 # key ======================== 
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"
@@ -75,5 +76,6 @@ function copy() {
 # ex.
 # pbpaste > text.txt
 # add function for running .py and .rs files also .cpp
+# add function to open mux with arguments(laravel, js, rust)
 
 
