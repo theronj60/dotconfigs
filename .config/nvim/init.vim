@@ -53,9 +53,11 @@ set relativenumber
 set linespace=30
 set backspace=indent,eol,start
 
-" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
-" - https://github.com/Valloric/YouCompleteMe
-" - https://github.com/nvim-lua/completion-nvim
+" Matching tags
+let g:vim_matchtag_enable_by_default = 1
+let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.blade.php'
+
+" Snippets
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><c-z>"
@@ -133,8 +135,8 @@ augroup autosourcing
 	autocmd Syntax * RainbowParenthesesLoadSquare
 	autocmd Syntax * RainbowParenthesesLoadBraces
 	autocmd Syntax * RainbowParenthesesLoadChevrons
-	"Workaround for creating transparent bg
-    " autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-    "         \ |    highlight LineNr     ctermbg=NONE guibg=NONE
-    "         \ |    highlight SignColumn ctermbg=NONE guibg=NONE
+"	Workaround for creating transparent bg
+     autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+             \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+             \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END
