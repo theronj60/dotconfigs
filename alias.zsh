@@ -28,8 +28,6 @@ alias stopgres="brew services stop postgresql"
 alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
-alias php7="brew-php-switcher 7.4"
-alias php8="brew-php-switcher 8.0"
 
 # software ======================== 
 alias python="python3"
@@ -45,27 +43,25 @@ alias fetch="git fetch origin"
 alias pullmaster="git pull origin master"
 alias pullmain="git pull origin main"
 alias pulldev="git pull origin dev"
-alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production)\" | xargs git branch -d"
-
-# vim ========================
+alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main|dev)\" | xargs git branch -d"
 
 # tmux ======================== 
-alias rustmux="tmux new -s -rust-"
-alias pymux="tmux new -s -python-"
-alias cmux="tmux new -s -cpp-"
-alias larmux="tmux new -s -laravel-"
-alias jsmux="tmux new -s -javascript-"
+alias rustdev="tmux rename-session rust"
+alias pydev="tmux rename-session python"
+alias cdev="tmux rename-session cpp"
 # attach requires a specified target
 alias attach="tmux attach -t"
+alias detach="tmux detach"
 # the below commands only run while tmux is running
-alias laradev="tmux rename-window code && tmux new-window -n watch"
-alias jsdev="tmux rename-window code && tmux new-window -n npm"
+alias laradev="tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
+alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
 # alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" -- example
 
 # key ======================== 
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"
 
 # Functions ========================
+
 # copy contents of a file
 # ex. copy file-name
 function copy() {
