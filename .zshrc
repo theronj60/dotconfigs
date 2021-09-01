@@ -16,8 +16,11 @@ export ZSH="/Users/theronjoe/.oh-my-zsh"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--layout=reverse --border'
-export FZF_COMPLETION_OPTS='--layout=reverse --border'
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
+export FZF_DEFAULT_OPTS="--layout=reverse --border"
+export FZF_COMPLETION_OPTS="--layout=reverse --border"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--layout=reverse --border"
 # get and configure bat for fzf preview
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes

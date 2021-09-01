@@ -41,9 +41,9 @@ colorscheme onehalfdark
 "-------------Vim Setup--------------"
 "vim settings"
 
-set encoding=UTF-8
 syntax enable
 filetype plugin indent on
+set encoding=UTF-8
 set noshowmode
 set laststatus=2
 set tabstop=4
@@ -136,7 +136,7 @@ augroup autosourcing
 	autocmd Syntax * RainbowParenthesesLoadBraces
 	autocmd Syntax * RainbowParenthesesLoadChevrons
 "	Workaround for creating transparent bg
-     autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-             \ |    highlight LineNr     ctermbg=NONE guibg=NONE
-             \ |    highlight SignColumn ctermbg=NONE guibg=NONE
+     " autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+             " \ |    highlight LineNr     ctermbg=NONE guibg=NONE
+             " \ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END

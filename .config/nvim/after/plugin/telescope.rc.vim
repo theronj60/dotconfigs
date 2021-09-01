@@ -30,7 +30,18 @@ local actions = require('telescope.actions')
 -- Global remapping
 ------------------------------
 require('telescope').setup{
-  defaults = {
+defaults = {
+	--finder_arguments = {'rg', '--files', '--hidden', '-g', '!.git' },
+	vimgrep_arguments = {
+		'rg',
+		'--hidden',
+		'--color=never',
+		'--no-heading',
+		'--with-filename',
+		'--line-number',
+		'--column',
+		'--smart-case'
+	},
     mappings = {
       n = {
         ["q"] = actions.close

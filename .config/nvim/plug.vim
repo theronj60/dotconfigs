@@ -17,6 +17,7 @@ Plug 'cohama/lexima.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'terrortylor/nvim-comment'
 Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'ThePrimeagen/vim-be-good'
 "----Icons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -40,7 +41,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'phpactor/phpactor',
 Plug 'kabouzeid/nvim-lspinstall'
-"Plug 'honza/vim-snippets'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
