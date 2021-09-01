@@ -24,18 +24,6 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
-" Status Line
-let g:lightline = {
-	\ 'colorscheme': 'onehalfdark',
-	\ 'active': {
-	\	'left': [ [ 'mode', 'paste' ],
-	\		[ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-	\ },
-	\ 'component_function': {
-	\ 	'gitbranch': 'FugitiveHead'
-	\ },
-\}
-
 colorscheme onehalfdark
 
 "-------------Vim Setup--------------"
@@ -135,8 +123,8 @@ augroup autosourcing
 	autocmd Syntax * RainbowParenthesesLoadSquare
 	autocmd Syntax * RainbowParenthesesLoadBraces
 	autocmd Syntax * RainbowParenthesesLoadChevrons
-"	Workaround for creating transparent bg
-     " autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-             " \ |    highlight LineNr     ctermbg=NONE guibg=NONE
-             " \ |    highlight SignColumn ctermbg=NONE guibg=NONE
+    " Workaround for creating transparent bg
+	" autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+	" 	\ |    highlight LineNr     ctermbg=NONE guibg=NONE
+	"  	\ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END
