@@ -124,7 +124,7 @@ augroup autosourcing
 	autocmd Syntax * RainbowParenthesesLoadBraces
 	autocmd Syntax * RainbowParenthesesLoadChevrons
     " Workaround for creating transparent bg
-	" autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-	" 	\ |    highlight LineNr     ctermbg=NONE guibg=NONE
-	"  	\ |    highlight SignColumn ctermbg=NONE guibg=NONE
+	autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
+	 	\ |    highlight LineNr     ctermbg=NONE guibg=NONE
+	  	\ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END

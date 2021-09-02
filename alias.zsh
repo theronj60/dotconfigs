@@ -46,9 +46,9 @@ alias pulldev="git pull origin dev"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main|dev)\" | xargs git branch -d"
 
 # tmux ======================== 
-alias rustdev="tmux rename-session rust"
-alias pydev="tmux rename-session python"
-alias cdev="tmux rename-session cpp"
+alias rustdev="tmux rename-session rust && tmux rename-window code"
+alias pydev="tmux rename-session python && tmux rename-window code"
+alias cdev="tmux rename-session cpp && tmux rename-window code"
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"
