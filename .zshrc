@@ -61,3 +61,8 @@ source $ZSH/oh-my-zsh.sh
 # Alias are being loaded from the /.oh-my-zsh/custom folder. 
 
 
+fpath=($fpath "/Users/theronjoe/.zfunctions")
+
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
