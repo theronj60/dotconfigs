@@ -31,6 +31,7 @@ colorscheme onehalfdark
 
 syntax enable
 filetype plugin indent on
+set updatetime=100
 set encoding=UTF-8
 set noshowmode
 set laststatus=2
@@ -43,15 +44,22 @@ set backspace=indent,eol,start
 
 " Matching tags
 let g:vim_matchtag_enable_by_default = 1
-let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.blade.php'
+let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.php'
 
 " Snippets
+let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><c-z>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Sets Ultisnips to work in blade files
+autocmd BufNewFile,BufRead *.blade.php setlocal ft=html
+
+" Updates git gutter on save
+autocmd BufWritePost * GitGutter
+
 "-------------Rust--------------"
 "Rust configs"
 
@@ -116,7 +124,6 @@ nnoremap <leader>O O<Esc>
 
 augroup autosourcing
     autocmd!
-
     autocmd BufWritePost init.vim source %
 	autocmd	VimEnter * RainbowParenthesesToggle
 	autocmd Syntax * RainbowParenthesesLoadRound

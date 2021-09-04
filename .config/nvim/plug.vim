@@ -14,7 +14,6 @@ call plug#begin(stdpath('config') . '/plugged')
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'leafOfTree/vim-matchtag'
 Plug 'cohama/lexima.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'terrortylor/nvim-comment'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -25,6 +24,7 @@ Plug 'ryanoasis/vim-devicons'
 "----Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
 "----File nav
 Plug 'preservim/nerdtree'
 Plug 'nvim-lua/popup.nvim'
@@ -40,8 +40,8 @@ Plug 'nvim-lua/completion-nvim'
 "----Language Servers
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'phpactor/phpactor',
 Plug 'kabouzeid/nvim-lspinstall'
+"Plug 'phpactor/phpactor',
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
