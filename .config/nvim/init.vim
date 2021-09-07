@@ -35,10 +35,13 @@ set updatetime=100
 set encoding=UTF-8
 set noshowmode
 set laststatus=2
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
-set number
+set nu
 set relativenumber
+set hidden
+set nowrap
+set scrolloff=6
 set linespace=30
 set backspace=indent,eol,start
 
@@ -124,7 +127,7 @@ nnoremap <leader>O O<Esc>
 
 augroup autosourcing
     autocmd!
-    autocmd BufWritePost init.vim source %
+    autocmd BufWritePost $MYVIMRC source %
 	autocmd	VimEnter * RainbowParenthesesToggle
 	autocmd Syntax * RainbowParenthesesLoadRound
 	autocmd Syntax * RainbowParenthesesLoadSquare
