@@ -84,6 +84,7 @@ vmap <leader>jk <Esc>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>bd :bd<CR>
+nnoremap <leader>cb :close<CR>
 
 " clear highlight search
 nnoremap <leader>cl :let @/ = ""<CR> 
