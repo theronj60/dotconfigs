@@ -44,7 +44,7 @@ set nowrap
 set scrolloff=6
 set linespace=30
 set backspace=indent,eol,start
-
+let NERDTreeShowHidden=1
 " Matching tags
 let g:vim_matchtag_enable_by_default = 1
 let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.php'
@@ -56,7 +56,8 @@ let g:UltiSnipsJumpForwardTrigger="<leader><c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
+" Set completion to use Ultisnips
+let g:completion_enable_snippet = 'UltiSnips'
 " Sets Ultisnips to work in blade files
 autocmd BufNewFile,BufRead *.blade.php setlocal ft=html
 

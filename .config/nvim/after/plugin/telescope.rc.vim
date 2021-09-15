@@ -1,7 +1,7 @@
 if !exists('g:loaded_telescope') | finish | endif
 
 " use inside nvim
-nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <silent> <leader>ff <cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<cr>
 nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
@@ -31,10 +31,10 @@ local actions = require('telescope.actions')
 ------------------------------
 require('telescope').setup{
 defaults = {
-	--finder_arguments = {'rg', '--files', '--hidden', '-g', '!.git' },
 	vimgrep_arguments = {
 		'rg',
 		'--hidden',
+		'--glob=!.git/*',
 		'--color=never',
 		'--no-heading',
 		'--with-filename',

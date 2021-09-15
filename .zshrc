@@ -7,7 +7,7 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # Created by `pipx` on 2021-08-02 22:07:37
 export PATH="$PATH:/Users/theronjoe/.local/bin"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-
+export PATH="$PATH:/usr/local/go/bin"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 

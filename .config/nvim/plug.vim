@@ -18,6 +18,7 @@ Plug 'terrortylor/nvim-comment'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'andweeb/presence.nvim'
 "----Icons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
@@ -41,7 +42,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "Plug 'phpactor/phpactor',
 
 " List ends here. Plugins become visible to Vim after this call.

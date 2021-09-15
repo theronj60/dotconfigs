@@ -29,7 +29,8 @@ require'nvim-treesitter.configs'.setup {
 	"svelte",
 	"typescript",
 	"lua",
-	"vim"
+	"vim",
+	"go"
   },
 }
 
