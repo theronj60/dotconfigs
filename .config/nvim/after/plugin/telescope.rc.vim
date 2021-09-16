@@ -43,11 +43,12 @@ defaults = {
 		'--smart-case'
 	},
     mappings = {
-      n = {
-        ["q"] = actions.close
-      },
+		n = {
+			["q"] = actions.close,
+			["rb"] = "delete_buffer"
+		},
     },
-  }
+  },
 }
 EOF
 

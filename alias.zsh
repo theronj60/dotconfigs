@@ -31,6 +31,7 @@ alias pa="php artisan"
 
 # software ======================== 
 alias python="python3"
+alias py="python"
 alias vim="nvim"
 
 # git ======================== 
@@ -65,8 +66,29 @@ alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to c
 # copy contents of a file
 # ex. copy file-name
 function copy() {
-	cat "$@" | pbcopy
+	cat "$@" | pbcopy && echo 'Copied '$@''
 }
+function tx() {
+	if [ "$TERM_PROGRAM" = tmux ]; then
+		if [ $# -eq 0 ]; then
+			tmux new -d -s tmux && tmux switch -t tmux
+		else
+			tmux new -d -s "$@" && tmux switch -t "$@"
+		fi
+	else
+		if [ $# -eq 0 ]; then
+			tmux
+		else
+			tmux new -s "$@"
+		fi
+	fi
+}
+
+# function paste() {
+#   file is auto created if doesnt exist
+# 	pbpaste > test.vim
+# 	ex. "$@.blade.php"
+# }
 # pbpaste -> paste
 # can pipe into file
 # ex.

@@ -108,6 +108,10 @@ nnoremap <C-d> <C-d>zzzv
 nnoremap <leader>ss :split<return><C-w>w
 nnoremap <leader>sv :vsplit<return><C-w>w
 nnoremap <leader><Space> <C-w>w
+"navigate to left window
+nnoremap <Space>h <C-w>h
+"navigate to right window
+nnoremap <Space>l <C-w>l
 
 "---------text---------"
 " moving text
