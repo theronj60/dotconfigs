@@ -92,6 +92,7 @@ nnoremap <leader>cl :let @/ = ""<CR>
 
 " NerdTree mappings
 nnoremap <leader>e :NERDTreeFocus<CR>
+nnoremap <leader>r :NERDTreeRefreshRoot<CR>
 nnoremap <C-o> :NERDTree<CR>
 "nnoremap <leader>i :NERDTreeToggle<CR>
 nnoremap <F2> :NERDTreeToggle<CR>

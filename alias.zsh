@@ -44,18 +44,18 @@ alias fetch="git fetch origin"
 alias pullmaster="git pull origin master"
 alias pullmain="git pull origin main"
 alias pulldev="git pull origin dev"
-alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main|dev)\" | xargs git branch -d"
+alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main)\" | xargs git branch -d"
 
 # tmux ======================== 
 alias rustdev="tmux rename-session rust && tmux rename-window code"
 alias pydev="tmux rename-session python && tmux rename-window code"
 alias cdev="tmux rename-session cpp && tmux rename-window code"
+alias godev="tmux rename-session golang && tmux rename-window code"
+alias laradev="tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
+alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"
-# the below commands only run while tmux is running
-alias laradev="tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
-alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
 # alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" -- example
 
 # key ======================== 
@@ -84,16 +84,15 @@ function tx() {
 	fi
 }
 
-# function paste() {
-#   file is auto created if doesnt exist
-# 	pbpaste > test.vim
-# 	ex. "$@.blade.php"
-# }
+function iconpaste() {
+  # file is created if doesnt exist
+	cat "$1" | pbcopy && pbpaste > /Users/theronjoe/code/holbrook/v3_admin/resources/views/components/icons/$2.blade.php && echo ''$2'.blade.php has been created from '$1''
+	# ex. "$@.blade.php"
+}
 # pbpaste -> paste
 # can pipe into file
 # ex.
 # pbpaste > text.txt
 # add function for running .py and .rs files also .cpp
-# add function to open mux with arguments(laravel, js, rust)
 
 
