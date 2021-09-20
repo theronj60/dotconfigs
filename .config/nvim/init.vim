@@ -79,13 +79,27 @@ let g:python_highlight_all = 1
 
 " Vim exit modes
 imap jk <Esc>
-vmap <leader>jk <Esc>
 
-" Vim buffers
-nnoremap <leader>bn :bn<CR>
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bd :bd<CR>
-nnoremap <leader>cb :close<CR>
+" Vim Buffers
+nnoremap <Space>9 :bn<CR>
+nnoremap <Space>0 :bp<CR>
+nnoremap <Space>db :bd<CR>
+
+" Vim Windows
+nnoremap <Space>C :close<CR>
+nnoremap <leader>ss :split<return><C-w>w
+nnoremap <leader>sv :vsplit<return><C-w>w
+nnoremap <leader><Space> <C-w>w
+"navigate to left window
+nnoremap <Space>h <C-w>h
+"navigate to right window
+nnoremap <Space>l <C-w>l
+
+" Vim Tabs
+nnoremap <Space>tl :tabn<CR>
+nnoremap <Space>th :tabp<CR>
+nnoremap <Space>tH :tabfirst<CR>
+nnoremap <Space>tL :tablast<CR>
 
 " clear highlight search
 nnoremap <leader>cl :let @/ = ""<CR> 
@@ -94,7 +108,6 @@ nnoremap <leader>cl :let @/ = ""<CR>
 nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <leader>r :NERDTreeRefreshRoot<CR>
 nnoremap <C-o> :NERDTree<CR>
-"nnoremap <leader>i :NERDTreeToggle<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
@@ -104,15 +117,6 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 nnoremap <C-u> <C-u>zzzv
 nnoremap <C-d> <C-d>zzzv
-
-"---------Windows---------"
-nnoremap <leader>ss :split<return><C-w>w
-nnoremap <leader>sv :vsplit<return><C-w>w
-nnoremap <leader><Space> <C-w>w
-"navigate to left window
-nnoremap <Space>h <C-w>h
-"navigate to right window
-nnoremap <Space>l <C-w>l
 
 "---------text---------"
 " moving text

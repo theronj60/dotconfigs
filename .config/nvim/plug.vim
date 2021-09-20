@@ -17,6 +17,7 @@ Plug 'cohama/lexima.vim'
 Plug 'terrortylor/nvim-comment'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'jceb/emmet.snippets'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'andweeb/presence.nvim'
 "----Icons
@@ -32,9 +33,9 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 "----Theme
-"Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'hoob3rt/lualine.nvim'
+Plug 'shadmansaleh/lualine.nvim'
+"Plug 'hoob3rt/lualine.nvim'
 "----Diagnostic
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'nvim-lua/completion-nvim'
@@ -42,8 +43,6 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'kabouzeid/nvim-lspinstall'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-"Plug 'phpactor/phpactor',
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

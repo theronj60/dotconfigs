@@ -45,7 +45,7 @@ defaults = {
     mappings = {
 		n = {
 			["q"] = actions.close,
-			["rb"] = "delete_buffer"
+			["rb"] = "delete_buffer",
 		},
     },
   },
