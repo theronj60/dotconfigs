@@ -23,6 +23,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--layout=reverse --border"
 # get and configure bat for fzf preview
 
+export EDITOR=nvim
+
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 ZSH_THEME="typewritten"
