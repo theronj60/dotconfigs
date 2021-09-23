@@ -13,10 +13,6 @@ EOF
 set background=dark
 set termguicolors
 
-if !has('gui_running')
-	set t_Co=256
-endif
-
 " Rainbow Parenthesis
 let g:rbpt_colorpairs = [
     \ ['darkgray',    'DarkOrchid3'],
@@ -29,7 +25,8 @@ colorscheme onehalfdark
 "-------------Vim Setup--------------"
 "vim settings"
 
-syntax enable
+syntax on
+set t_Co=256
 filetype plugin indent on
 set updatetime=100
 set encoding=UTF-8
@@ -81,8 +78,8 @@ let g:python_highlight_all = 1
 imap jk <Esc>
 
 " Vim Buffers
-nnoremap <Space>9 :bn<CR>
-nnoremap <Space>0 :bp<CR>
+nnoremap <Space>0 :bn<CR>
+nnoremap <Space>9 :bp<CR>
 nnoremap <Space>db :bd<CR>
 
 " Vim Windows
@@ -144,8 +141,4 @@ augroup autosourcing
 	autocmd Syntax * RainbowParenthesesLoadSquare
 	autocmd Syntax * RainbowParenthesesLoadBraces
 	autocmd Syntax * RainbowParenthesesLoadChevrons
-    " Workaround for creating transparent bg
-	autocmd SourcePost * highlight Normal     ctermbg=NONE guibg=NONE
-	 	\ |    highlight LineNr     ctermbg=NONE guibg=NONE
-	  	\ |    highlight SignColumn ctermbg=NONE guibg=NONE
 augroup END

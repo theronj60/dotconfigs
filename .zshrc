@@ -48,8 +48,8 @@ plugins=(
 )
 
 # Add colors to Terminal
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
+# export CLICOLOR=1
+# export LSCOLORS=ExFxBxDxCxegedabagacad
 
 source $ZSH/oh-my-zsh.sh
 
