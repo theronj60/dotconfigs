@@ -136,6 +136,7 @@ nnoremap <leader>O O<Esc>
 augroup autosourcing
     autocmd!
     autocmd BufWritePost $MYVIMRC source %
+	" autocmd VimEnter * 
 	autocmd	VimEnter * RainbowParenthesesToggle
 	autocmd Syntax * RainbowParenthesesLoadRound
 	autocmd Syntax * RainbowParenthesesLoadSquare

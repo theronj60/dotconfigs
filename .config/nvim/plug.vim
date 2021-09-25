@@ -20,6 +20,7 @@ Plug 'honza/vim-snippets'
 Plug 'jceb/emmet.snippets'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'andweeb/presence.nvim'
+Plug 'tpope/vim-dispatch'
 "----Icons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'

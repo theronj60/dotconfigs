@@ -8,12 +8,18 @@ M.search_dot = function ()
 		cwd = "~/dotconfigs",
 		prompt = "~ dotfiles ~",
 		hidden = true,
-		--- test
-		-- layout_strategy = 'horizontal',
-		-- layout_options = {
-		-- 	preview_width = 0.75,
-		-- },
+		file_ignore_patterns = { "%.git" },
+		layout_strategy = 'horizontal',
+		layout_options = {
+			preview_width = 0.55,
+		},
 	}
 end
 
+M.show_quick = function ()
+	require('telescope.config').vim_buffer_qflist {
+	}
+end
+
+-- previewers.vim_buffer_qflist.new
 return M
