@@ -20,6 +20,6 @@ nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
 nnoremap <silent>gh <Cmd>Lspsaga lsp_finder<CR>
 nnoremap <silent>gj <Cmd>Lspsaga signature_help<CR>
 nnoremap <silent><leader>t <Cmd>Lspsaga open_floaterm<CR>
-tnoremap <silent><A-d> <Cmd>Lspsaga close_floaterm<CR>
+tnoremap <silent><leader>\ <Cmd>Lspsaga close_floaterm<CR>
 nnoremap <silent><space>ca <Cmd>Lspsaga code_action<CR>
 

@@ -23,7 +23,15 @@ lualine.setup {
 	  'fileformat',
 	  'filetype',
     },
-    lualine_y = {'progress'},
+    lualine_y = {
+		{
+			'diagnostics',
+		    sources = {'nvim_lsp'},
+		    sections = {'error', 'warn', 'info', 'hint'},
+		    symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}
+		},
+		{'progress'},
+	},
     lualine_z = {'location'}
   },
   inactive_sections = {
@@ -33,14 +41,6 @@ lualine.setup {
     lualine_x = {'location'},
     lualine_y = {},
    lualine_z = {}
-  },
-  tabline = {
-	lualine_a = {},
-	lualine_b = {"buffers"},
-	lualine_c = {},
-	lualine_x = {},
-	lualine_y = {"tabs"},
-	lualine_z = {}
   },
   extensions = {'fugitive', 'nerdtree'}
 } 

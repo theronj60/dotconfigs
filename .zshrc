@@ -43,7 +43,6 @@ export TYPEWRITTEN_COLORS="arrow:#266b85"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-	laravel
 	web-search
 	zsh-syntax-highlighting
 	z
