@@ -43,4 +43,4 @@ lualine.setup {
    lualine_z = {}
   },
   extensions = {'fugitive', 'nerdtree'}
-} 
+}

@@ -7,6 +7,10 @@ runtime ./maps.vim
 "Color settings"
 set background=dark 
 set termguicolors
+
+let g:netrw_banner = 0
+let g:nvim_tree_quit_on_open = 1 
+
 " Rainbow Parenthesis
 let g:rbpt_colorpairs = [
     \ ['darkgray',    'DarkOrchid3'],

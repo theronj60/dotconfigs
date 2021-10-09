@@ -53,6 +53,7 @@ alias cdev="tmux rename-session cpp && tmux rename-window code"
 alias godev="tmux rename-session golang && tmux rename-window code"
 alias laradev="tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
 alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
+alias joedev="tmux rename-session joet && tmux rename-window code && tmux new-window -n api && tmux new-window -n npm"
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"
