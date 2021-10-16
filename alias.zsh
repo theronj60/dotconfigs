@@ -2,11 +2,6 @@
 alias reloadzsh="source ~/.zshrc && echo 'Zsh Refreshed!'"
 alias reloadtmux="tmux source ~/.tmux.conf && echo 'Tmux Refreshed!'"
 alias customzsh="cd ~/.oh-my-zsh/custom"
-alias zshconfig="vim ~/.zshrc"
-alias tmuxconfig="vim ~/.tmux.conf"
-alias vimconfig="vim ~/.config/nvim/init.vim" 
-alias plugconfig="vim ~/.config/nvim/plug.vim"
-alias aliasconfig="vim ~/dotconfigs/alias.zsh"
 
 # system ======================== 
 alias home="cd ~"
@@ -90,6 +85,12 @@ function iconpaste() {
 	cat "$1" | pbcopy && pbpaste > /Users/theronjoe/code/holbrook/v3_admin/resources/views/components/icons/$2.blade.php && echo ''$2'.blade.php has been created from '$1''
 	# ex. "$@.blade.php"
 }
+
+# playing with tmux popup
+function readman() {
+	tmux display-popup -E 'man '$@''
+}
+
 # pbpaste -> paste
 # can pipe into file
 # ex.

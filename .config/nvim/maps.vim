@@ -28,7 +28,6 @@ nnoremap <Space>l <C-w>l
 
 " clear highlight search
 nnoremap <leader>cl :let @/ = ""<CR> 
-
 " NvimTree mappings
 nnoremap <F2> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>

@@ -23,6 +23,7 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'andweeb/presence.nvim'
 Plug 'tpope/vim-dispatch'
 "Plug 'jwalton512/vim-blade'
+Plug 'Eduruiz/vim-blade'
 "----Icons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'

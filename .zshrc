@@ -48,6 +48,10 @@ plugins=(
 	z
 )
 
+ZSH_WEB_SEARCH_ENGINES=(
+	reddit "https://www.reddit.com/search/?q="
+)
+
 # Add colors to Terminal
 # export CLICOLOR=1
 # export LSCOLORS=ExFxBxDxCxegedabagacad
