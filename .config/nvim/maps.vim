@@ -22,9 +22,9 @@ nnoremap <leader>ss :split<return><C-w>w
 nnoremap <leader>sv :vsplit<return><C-w>w
 nnoremap <leader><Space> <C-w>w
 "navigate to left window
-nnoremap <Space>h <C-w>h
+" nnoremap <Space>h <C-w>h
 "navigate to right window
-nnoremap <Space>l <C-w>l
+" nnoremap <Space>l <C-w>l
 
 " clear highlight search
 nnoremap <leader>cl :let @/ = ""<CR> 
