@@ -10,6 +10,7 @@ nnoremap <silent> <leader>gb <cmd>Telescope git_branches<cr>
 nnoremap <silent> <leader>br <cmd>Telescope file_browser<cr>
 nnoremap <silent> <leader>nd <cmd>lua require('tjoe.telescope').search_dot()<cr>
 nnoremap <silent> <leader>q <cmd>lua require('tjoe.telescope').show_quick()<cr>
+nnoremap <silent> <leader>w <cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>
 
 lua << EOF
 local actions = require('telescope.actions')

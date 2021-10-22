@@ -50,6 +50,7 @@ plugins=(
 
 ZSH_WEB_SEARCH_ENGINES=(
 	reddit "https://www.reddit.com/search/?q="
+	brand-icon "https://simpleicons.org/?q="
 )
 
 # Add colors to Terminal

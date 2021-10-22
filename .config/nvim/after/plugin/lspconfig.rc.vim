@@ -45,41 +45,11 @@ local on_attach = function(client, bufnr)
 	--	vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
 	--	vim.api.nvim_command [[augroup END]]
 	--end
-
-	require'completion'.on_attach(client, bufnr)
-	--protocol.SymbolKind = { }
-	protocol.CompletionItemKind = {
-		'', -- Text
-		'', -- Method
-		'', -- Function
-		'', -- Constructor
-		'', -- Field
-		'', -- Variable
-		'', -- Class
-		'ﰮ', -- Interface
-		'', -- Module
-		'', -- Property
-		'', -- Unit
-		'', -- Value
-		'', -- Enum
-		'', -- Keyword
-		'﬌', -- Snippet
-		'', -- Color
-		'', -- File
-		'', -- Reference
-		'', -- Folder
-		'', -- EnumMember
-		'', -- Constant
-		'', -- Struct
-		'', -- Event
-		'ﬦ', -- Operator
-		'', -- TypeParameter
-	}
 	end	
 	
 	nvim_lsp.diagnosticls.setup {
 	  on_attach = on_attach,
-	  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+	  filetypes = { 'javascript', 'javascriptreact', 'json', 'vue', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
 	  init_options = {
 			linters = {
 			  eslint = {
@@ -125,6 +95,7 @@ local on_attach = function(client, bufnr)
 			  css = 'prettier',
 			  javascript = 'eslint_d',
 			  javascriptreact = 'eslint_d',
+			  vue = 'eslind_d',
 			  json = 'prettier',
 			  scss = 'prettier',
 			  less = 'prettier',

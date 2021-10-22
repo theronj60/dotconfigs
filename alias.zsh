@@ -1,6 +1,7 @@
 # zsh ======================== 
 alias reloadzsh="source ~/.zshrc && echo 'Zsh Refreshed!'"
 alias reloadtmux="tmux source ~/.tmux.conf && echo 'Tmux Refreshed!'"
+alias reloadrice="source ~/.zshrc && tmux source ~/.tmux.conf && 'Setup Refreshed!'"
 alias customzsh="cd ~/.oh-my-zsh/custom"
 
 # system ======================== 
@@ -46,7 +47,7 @@ alias rustdev="tmux rename-session rust && tmux rename-window code"
 alias pydev="tmux rename-session python && tmux rename-window code"
 alias cdev="tmux rename-session cpp && tmux rename-window code"
 alias godev="tmux rename-session golang && tmux rename-window code"
-alias laradev="tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
+alias laradev="cd ~/code/holbrook/v3_admin && tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
 alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
 alias joedev="tmux rename-session joet && tmux rename-window code && tmux new-window -n api && tmux new-window -n npm"
 # attach requires a specified target

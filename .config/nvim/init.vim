@@ -29,6 +29,7 @@ lua << EOF
 -- require("indent_blankline").setup {
 --     show_end_of_line = true,
 -- }
+
 EOF
 
 "-------------Vim Setup--------------"
@@ -53,7 +54,7 @@ set backspace=indent,eol,start
 "
 " Matching tags
 let g:vim_matchtag_enable_by_default = 1
-let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.php'
+let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.php,*.blade'
 
 " Snippets
 let g:UltiSnipsSnippetDirectories = ['UltiSnips']

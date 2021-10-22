@@ -22,8 +22,6 @@ Plug 'jceb/emmet.snippets'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'andweeb/presence.nvim'
 Plug 'tpope/vim-dispatch'
-"Plug 'jwalton512/vim-blade'
-Plug 'Eduruiz/vim-blade'
 "----Icons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
@@ -44,11 +42,16 @@ Plug 'shadmansaleh/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 "----Diagnostic
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'nvim-lua/completion-nvim'
+"----Auto-Completion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+"
 "----Language Servers
 Plug 'neovim/nvim-lspconfig'
 Plug 'tami5/lspsaga.nvim'
-"Plug 'glepnir/lspsaga.nvim'
 Plug 'kabouzeid/nvim-lspinstall'
 
 " List ends here. Plugins become visible to Vim after this call.
