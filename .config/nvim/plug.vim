@@ -38,7 +38,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
 "----Theme
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'shadmansaleh/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 "----Diagnostic
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -52,7 +52,7 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 "----Language Servers
 Plug 'neovim/nvim-lspconfig'
 Plug 'tami5/lspsaga.nvim'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

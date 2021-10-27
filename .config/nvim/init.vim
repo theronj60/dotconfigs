@@ -70,10 +70,21 @@ let g:python_highlight_all = 1
 "-------------Auto-Commands--------------"
 "Automatically source the Vimrc file on save."
 
+" Sources for the checktime autocmd
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+
 augroup autosourcing
     autocmd!
     autocmd BufWritePost $MYVIMRC source %
 	autocmd BufRead,BufNewFile *.blade.php set filetype=blade
+	" Trigger `autoread` when files changes on disk
+	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+		\ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+	" Notification after file change
+	autocmd FileChangedShellPost *
+	  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 	" autocmd VimEnter * <cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<cr>
 	" Updates git gutter on save
 	autocmd BufWritePost * GitGutter

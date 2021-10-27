@@ -3,10 +3,11 @@ if !exists('g:loaded_telescope') | finish | endif
 " use inside nvim
 nnoremap <silent> <leader>ff <cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<cr>
 " nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <silent> <leader>r <cmd>Telescope registers theme=ivy<cr>
 nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent> <leader>fb <cmd>Telescope buffers theme=ivy<cr>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <silent> <leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <silent> <leader>gb <cmd>Telescope git_branches theme=ivy<cr>
 nnoremap <silent> <leader>br <cmd>Telescope file_browser<cr>
 nnoremap <silent> <leader>nd <cmd>lua require('tjoe.telescope').search_dot()<cr>
 nnoremap <silent> <leader>q <cmd>lua require('tjoe.telescope').show_quick()<cr>

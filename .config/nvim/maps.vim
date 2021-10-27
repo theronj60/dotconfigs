@@ -7,9 +7,10 @@ imap jk <Esc>
 " Vim Buffers
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <Space>0 :BufferLineCycleNext<CR>
-nnoremap <Space>9 :BufferLineCyclePrev<CR>
-
+nnoremap <silent><Space>0 :BufferLineCycleNext<CR>
+nnoremap <silent><Space>9 :BufferLineCyclePrev<CR>
+nnoremap <silent><Space><< :BufferLineMovePrev<CR>
+nnoremap <silent><Space>>> :BufferLineMoveNext<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <Space>br :BufferLineMoveNext<CR>
 nnoremap <Space>bl :BufferLineMovePrev<CR>
@@ -30,8 +31,8 @@ nnoremap <leader><Space> <C-w>w
 nnoremap <leader>cl :let @/ = ""<CR> 
 " NvimTree mappings
 nnoremap <F2> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>e :NvimTreeFocus<CR>
+nnoremap <leader>e :NvimTreeRefresh<CR>
+" nnoremap <leader>e :NvimTreeFocus<CR>
 
 "---------movements---------"
 nnoremap n nzzzv

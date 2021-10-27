@@ -72,3 +72,6 @@ fpath=($fpath "/Users/theronjoe/.zfunctions")
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt typewritten
+fpath=($fpath "/Users/theronjoe/.zfunctions")
+fpath=($fpath "/Users/theronjoe/.zfunctions")
+fpath=($fpath "/Users/theronjoe/.zfunctions")
