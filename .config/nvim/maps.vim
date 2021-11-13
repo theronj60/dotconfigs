@@ -11,6 +11,16 @@ nnoremap <silent><Space>0 :BufferLineCycleNext<CR>
 nnoremap <silent><Space>9 :BufferLineCyclePrev<CR>
 nnoremap <silent><Space><< :BufferLineMovePrev<CR>
 nnoremap <silent><Space>>> :BufferLineMoveNext<CR>
+
+nnoremap <silent><Space>1 <Cmd>BufferLineGoToBuffer 1<CR>
+nnoremap <silent><Space>2 <Cmd>BufferLineGoToBuffer 2<CR>
+nnoremap <silent><Space>3 <Cmd>BufferLineGoToBuffer 3<CR>
+nnoremap <silent><Space>4 <Cmd>BufferLineGoToBuffer 4<CR>
+nnoremap <silent><Space>5 <Cmd>BufferLineGoToBuffer 5<CR>
+nnoremap <silent><Space>6 <Cmd>BufferLineGoToBuffer 6<CR>
+nnoremap <silent><Space>7 <Cmd>BufferLineGoToBuffer 7<CR>
+nnoremap <silent><Space>8 <Cmd>BufferLineGoToBuffer 8<CR>
+
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <Space>br :BufferLineMoveNext<CR>
 nnoremap <Space>bl :BufferLineMovePrev<CR>

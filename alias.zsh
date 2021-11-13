@@ -47,9 +47,9 @@ alias rustdev="tmux rename-session rust && tmux rename-window code"
 alias pydev="tmux rename-session python && tmux rename-window code"
 alias cdev="tmux rename-session cpp && tmux rename-window code"
 alias godev="tmux rename-session golang && tmux rename-window code"
-alias laradev="cd ~/code/holbrook/v3_admin && tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
+alias holbrook="cd ~/code/holbrook/v3_admin && tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
 alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
-alias joedev="tmux rename-session joet && tmux rename-window code && tmux new-window -n api && tmux new-window -n npm"
+alias joedev="cd ~/code/projects/real-world/joetwebdev && tmux rename-session joet && tmux rename-window code && tmux new-window -n npm"
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"
@@ -83,6 +83,8 @@ function tx() {
 
 function iconpaste() {
   # file is created if doesnt exist
+  # $1 is the file name "test.svg" and $2 is the name of the blade file "test".blade.php
+  # standard would be to copy the first arguments name for the second argument
 	cat "$1" | pbcopy && pbpaste > /Users/theronjoe/code/holbrook/v3_admin/resources/views/components/icons/$2.blade.php && echo ''$2'.blade.php has been created from '$1''
 	# ex. "$@.blade.php"
 }

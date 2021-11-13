@@ -40,7 +40,7 @@ lualine.setup {
     lualine_c = {'filename'},
     lualine_x = {'location'},
     lualine_y = {},
-   lualine_z = {}
+    lualine_z = {}
   },
   extensions = {'fugitive', 'nerdtree'}
 }

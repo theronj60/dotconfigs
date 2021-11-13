@@ -85,7 +85,8 @@ augroup autosourcing
 	" Notification after file change
 	autocmd FileChangedShellPost *
 	  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
-	" autocmd VimEnter * <cmd>lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<cr>
+	" open Telescope when vim starts
+	" autocmd VimEnter * <cmd>Telescope find_files find_command = {'rg','--files','--hidden','-g','!.git'}<CR>
 	" Updates git gutter on save
 	autocmd BufWritePost * GitGutter
 	autocmd	VimEnter * RainbowParenthesesToggle

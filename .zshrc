@@ -23,6 +23,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--layout=reverse --border"
 # get and configure bat for fzf preview
 
+[ -f ~/.jira.zsh ] && source ~/.jira.zsh
 export EDITOR=nvim
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -72,6 +73,5 @@ fpath=($fpath "/Users/theronjoe/.zfunctions")
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt typewritten
-fpath=($fpath "/Users/theronjoe/.zfunctions")
-fpath=($fpath "/Users/theronjoe/.zfunctions")
+
 fpath=($fpath "/Users/theronjoe/.zfunctions")

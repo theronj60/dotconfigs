@@ -17,6 +17,7 @@ require'nvim-treesitter.configs'.setup {
     "tsx",
 	"cpp",
     "toml",
+	"dockerfile",
     "php",
 	"python",
     "json",
