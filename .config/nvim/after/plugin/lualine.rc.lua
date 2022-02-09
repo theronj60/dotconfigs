@@ -26,7 +26,7 @@ lualine.setup {
     lualine_y = {
 		{
 			'diagnostics',
-		    sources = {'nvim_lsp'},
+		    sources = {'nvim_diagnostic'},
 		    sections = {'error', 'warn', 'info', 'hint'},
 		    symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '}
 		},

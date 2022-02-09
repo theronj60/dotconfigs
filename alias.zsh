@@ -1,13 +1,14 @@
 # zsh ======================== 
 alias reloadzsh="source ~/.zshrc && echo 'Zsh Refreshed!'"
 alias reloadtmux="tmux source ~/.tmux.conf && echo 'Tmux Refreshed!'"
-alias reloadrice="source ~/.zshrc && tmux source ~/.tmux.conf && 'Setup Refreshed!'"
+alias reloadrice="source ~/.zshrc && tmux source ~/.tmux.conf && echo 'Setup Refreshed!'"
 alias customzsh="cd ~/.oh-my-zsh/custom"
 
 # system ======================== 
 alias home="cd ~"
 alias cl="clear"
 alias la="ls -a"
+alias laa="ls -la"
 # Lock the screen (when going AFK)
 alias afk="sleep 1 && pmset displaysleepnow"
 alias :q="exit"
@@ -29,6 +30,7 @@ alias pa="php artisan"
 alias python="python3"
 alias py="python"
 alias vim="nvim"
+alias vi="nvim"
 
 # git ======================== 
 alias g="git"
@@ -43,13 +45,10 @@ alias pulldev="git pull origin dev"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main)\" | xargs git branch -d"
 
 # tmux ======================== 
-alias rustdev="tmux rename-session rust && tmux rename-window code"
-alias pydev="tmux rename-session python && tmux rename-window code"
-alias cdev="tmux rename-session cpp && tmux rename-window code"
 alias godev="tmux rename-session golang && tmux rename-window code"
-alias holbrook="cd ~/code/holbrook/v3_admin && tmux rename-session laravel && tmux rename-window code && tmux new-window -n watch"
-alias jsdev="tmux rename-session javascript && tmux rename-window code && tmux new-window -n npm"
+alias holbrook="cd ~/code/holbrook/v3_admin && tmux rename-session Holbrook && tmux rename-window laravel && tmux new-window -n watch"
 alias joedev="cd ~/code/projects/real-world/joetwebdev && tmux rename-session joet && tmux rename-window code && tmux new-window -n npm"
+alias nftdev="tmux rename-session solana && tmux rename-window code"
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"

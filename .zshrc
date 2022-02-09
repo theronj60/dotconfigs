@@ -26,6 +26,10 @@ export FZF_CTRL_T_OPTS="--layout=reverse --border"
 [ -f ~/.jira.zsh ] && source ~/.jira.zsh
 export EDITOR=nvim
 
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 ZSH_THEME="typewritten"

@@ -32,6 +32,8 @@ nnoremap <Space>C :close<CR>
 nnoremap <leader>ss :split<return><C-w>w
 nnoremap <leader>sv :vsplit<return><C-w>w
 nnoremap <leader><Space> <C-w>w
+nnoremap <silent><C-e>e :vertical resize +10<CR>
+nnoremap <silent><C-e>s :vertical resize -10<CR>
 "navigate to left window
 " nnoremap <Space>h <C-w>h
 "navigate to right window
