@@ -11,16 +11,19 @@ export PATH="$PATH:/usr/local/go/bin"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
+path+="$HOME/Library/Python/3.9/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/theronjoe/.oh-my-zsh"
 
+ulimit -S -n 4096
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
-export FZF_DEFAULT_OPTS="--layout=reverse --border"
-export FZF_COMPLETION_OPTS="--layout=reverse --border"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--layout=reverse --border"
+# export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
+# export FZF_DEFAULT_OPTS="--layout=reverse --border"
+# export FZF_COMPLETION_OPTS="--layout=reverse --border"
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_CTRL_T_OPTS="--layout=reverse --border"
 # get and configure bat for fzf preview
 
 [ -f ~/.jira.zsh ] && source ~/.jira.zsh
@@ -37,10 +40,10 @@ ZSH_THEME="typewritten"
 # ZSH_THEME="halil"
 
 export TYPEWRITTEN_SYMBOL="->"
-export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
+export TYPEWRITTEN_PROMPT_LAYOUT="multiline"
 export TYPEWRITTEN_RELATIVE_PATH="home"
-export TYPEWRITTEN_COLORS="arrow:#266b85"
-
+export TYPEWRITTEN_COLORS="arrow:#266b85;host:#39d4ba;user:magenta;host_user_connector:yellow"
+#39d4ba
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/

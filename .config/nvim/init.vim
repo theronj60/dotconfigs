@@ -9,7 +9,7 @@ set background=dark
 set termguicolors
 
 let g:netrw_banner = 0
-let g:nvim_tree_quit_on_open = 1
+" let g:nvim_tree_quit_on_open = 1
 
 " Rainbow Parenthesis
 let g:rbpt_colorpairs = [
@@ -44,6 +44,8 @@ hi Normal guibg=NONE ctermbg=NONE
 
 syntax on
 set t_Co=256
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 filetype plugin indent on
 set updatetime=100
 set encoding=UTF-8

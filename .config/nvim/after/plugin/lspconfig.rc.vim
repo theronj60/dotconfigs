@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 	buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 	buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-	buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+	--buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
 	buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 	buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 	-- buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
@@ -49,7 +49,7 @@ local on_attach = function(client, bufnr)
 	
 	nvim_lsp.diagnosticls.setup {
 	  on_attach = on_attach,
-	  filetypes = { 'javascript', 'javascriptreact', 'json', 'vue', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+	  filetypes = { 'javascript', 'javascriptreact', 'json', 'vue', 'blade', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
 	  init_options = {
 			linters = {
 			  eslint = {
@@ -107,19 +107,6 @@ local on_attach = function(client, bufnr)
 		  }
 	}
 	
-	-- nvim_lsp.tsserver.setup{
-	-- 	on_attach = on_attach,
-	-- }
-	-- nvim_lsp.svelte.setup{
-	-- 	on_attach = on_attach,
-	-- }
-	-- nvim_lsp.vuels.setup{
-	-- 	on_attach = on_attach,
-	-- }
-	-- nvim_lsp.intelephense.setup{
-	-- 	capabilities = capabilities,
-	--  	on_attach = on_attach,
-	-- }
 	nvim_lsp.rust_analyzer.setup({
 		on_attach=on_attach,
 		settings = {
@@ -137,12 +124,21 @@ local on_attach = function(client, bufnr)
 			}
 		}
 	})
-	-- nvim_lsp.clangd.setup{
-	-- 	on_attach = on_attach,
-	-- }
-	-- nvim_lsp.jedi_language_server.setup{
-	-- 	on_attach = on_attach,
-	-- }
+
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+	nvim_lsp.emmet_ls.setup({
+		-- on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = { "html", "blade", "css", "typescriptreact", "javascriptreact" },
+	})
+
+	nvim_lsp.intelephense.setup({
+		capabilities = capabilities,
+		filetypes = { "*.php", "*.phtml", "*.blade.php" },
+	})
+
 
 local lsp_installer = require("nvim-lsp-installer")
 

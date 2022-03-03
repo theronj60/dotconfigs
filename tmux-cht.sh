@@ -11,12 +11,12 @@ fi
 # @TODO how can we open a tmux popup and save the query variable?
 read -r -p 'Enter Query: ' query
 
-if grep -qs "$selected" ~/.tmux-cht-languages; then
+if grep -qs "$selected" ~/dotconfigs/.tmux-cht-languages; then
     query=`echo $query | tr ' ' '+'`
 	# switch neww with popup -E "{command}"
-	tmux popup -h 80% -w 80% -E "curl cht.sh/$selected/$query/ | less"
+	tmux popup -h 80% -w 80% -E "curl -s cht.sh/$selected/$query | less -r"
     # tmux neww bash -c "echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done"
 else
-	tmux popup -h 80% -w 80% -E "curl -s cht.sh/$selected/$query | less"
+	tmux popup -h 80% -w 80% -E "curl -s cht.sh/$selected~$query/ | less -r"
     # tmux neww bash -c "curl -s cht.sh/$selected/$query | less"
 fi
