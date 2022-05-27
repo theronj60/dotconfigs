@@ -36,6 +36,7 @@ alias vi="nvim"
 alias g="git"
 alias ga="git add ."
 alias gc="git commit -m"
+alias worktree="git worktree"
 alias grpublic="git restore *public"
 alias undocommit="git reset HEAD~1"
 alias fetch="git fetch origin"
@@ -46,7 +47,6 @@ alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|ma
 
 # tmux ======================== 
 alias godev="tmux rename-session golang && tmux rename-window code"
-alias holbrook="cd ~/code/holbrook/v3_admin && tmux rename-session Holbrook && tmux rename-window laravel && tmux new-window -n watch"
 alias joedev="cd ~/code/projects/real-world/joetwebdev && tmux rename-session joet && tmux rename-window code && tmux new-window -n npm"
 alias nftdev="tmux rename-session solana && tmux rename-window code"
 # attach requires a specified target
@@ -64,6 +64,7 @@ alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to c
 function copy() {
 	cat "$@" | pbcopy && echo 'Copied '$@''
 }
+
 function tx() {
 	if [ "$TERM_PROGRAM" = tmux ]; then
 		if [ $# -eq 0 ]; then
@@ -80,23 +81,42 @@ function tx() {
 	fi
 }
 
-function iconpaste() {
-  # file is created if doesnt exist
-  # $1 is the file name "test.svg" and $2 is the name of the blade file "test".blade.php
-  # standard would be to copy the first arguments name for the second argument
-	cat "$1" | pbcopy && pbpaste > /Users/theronjoe/code/holbrook/v3_admin/resources/views/components/icons/$2.blade.php && echo ''$2'.blade.php has been created from '$1''
-	# ex. "$@.blade.php"
-}
-
 # playing with tmux popup
 function readman() {
 	tmux display-popup -E 'man '$@''
 }
 
-# pbpaste -> paste
-# can pipe into file
-# ex.
-# pbpaste > text.txt
-# add function for running .py and .rs files also .cpp
+# workflow for git worktrees(for day job)
+function setworktree() { 
+	# copy env
+	cp ../master/.env .env
+	npm install
+	composer install
+	tmux rename-window "$@" 
+	tmux split-window -h -p 33 -c "#{pane_current_path}"
+	# passed in input would be branch number
+	valet link "$@".v3_admin
+}
 
+function removewt() {
+	# passed in input would be branch number
+	valet unlink
+	cd ..
+	# directory passed to remove
+	git worktree remove "$@"
+}
 
+function startdev() {
+	# cd "$@" && tmux rename-window laravel && tmux new-window -n watch && tmux select-window -t 0
+	cd "$@" && tmux rename-window "$@" && tmux split-window -h -p 33 -c "#{pane_current_path}"
+}
+
+function iconpaste() {
+  # file is created if doesnt exist
+  # $1 is the file name "test.svg" and $2 is the name of the blade file "test".blade.php
+  # $3 is the branch name
+  # standard would be to copy the first arguments name for the second argument
+	cat "$1" | pbcopy && pbpaste > /Users/theronjoe/code/holbrook/nos/$3/resources/views/components/icons/$2.blade.php && echo ''$2'.blade.php has been created from '$1''
+
+	# ex. "$@.blade.php"
+}

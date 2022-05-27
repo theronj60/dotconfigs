@@ -33,6 +33,7 @@ let g:onedark_transparent_sidebar = "false"
 " endif
 
 " colorscheme tokyonight
+" colorscheme gruvbox
 colorscheme onehalfdark
 " colorscheme onedark
 hi LineNr guibg=NONE ctermbg=NONE
@@ -46,6 +47,8 @@ syntax on
 set t_Co=256
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=99
+set foldlevel=2
 filetype plugin indent on
 set updatetime=100
 set encoding=UTF-8

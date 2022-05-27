@@ -38,6 +38,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
 "----Theme
 "---testing themes
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'NTBBloodbath/doom-one.nvim'
 Plug 'sainnhe/edge'
 Plug 'cloudlena/nvim-quantum'

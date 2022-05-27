@@ -8,10 +8,12 @@ nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent> <leader>fb <cmd>Telescope buffers theme=ivy<cr>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent> <leader>gb <cmd>Telescope git_branches theme=ivy<cr>
-nnoremap <silent> <leader>br <cmd>Telescope file_browser<cr>
+" nnoremap <silent> <leader>br <cmd>Telescope file_browser<cr>
 nnoremap <silent> <leader>nd <cmd>lua require('tjoe.telescope').search_dot()<cr>
 nnoremap <silent> <leader>q <cmd>lua require('tjoe.telescope').show_quick()<cr>
 nnoremap <silent> <leader>w <cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>
+nnoremap <silent> <leader>gt <cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>
+nnoremap <silent> <leader>ct <cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>
 
 lua << EOF
 local actions = require('telescope.actions')
