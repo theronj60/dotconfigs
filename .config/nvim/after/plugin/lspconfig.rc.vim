@@ -46,66 +46,71 @@ local on_attach = function(client, bufnr)
 	--	vim.api.nvim_command [[augroup END]]
 	--end
 	end	
-	
-	nvim_lsp.diagnosticls.setup {
-	  on_attach = on_attach,
-	  filetypes = { 'javascript', 'javascriptreact', 'json', 'vue', 'blade', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
-	  init_options = {
-			linters = {
-			  eslint = {
-				command = 'eslint_d',
-				rootPatterns = { '.git' },
-				debounce = 100,
-				args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-				sourceName = 'eslint_d',
-				parseJson = {
-				  errorsRoot = '[0].messages',
-				  line = 'line',
-				  column = 'column',
-				  endLine = 'endLine',
-				  endColumn = 'endColumn',
-				  message = '[eslint] ${message} [${ruleId}]',
-				  security = 'severity'
-				},
-				securities = {
-				  [2] = 'error',
-				  [1] = 'warning'
-				}
-			  },
-			},
-			filetypes = {
-			  vue = 'eslint',
-			  javascript = 'eslint',
-			  javascriptreact = 'eslint',
-			  typescript = 'eslint',
-			  typescriptreact = 'eslint',
-			},
-			formatters = {
-			  eslint_d = {
-				command = 'eslint_d',
-				args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-				rootPatterns = { '.git' },
-			  },
-			  prettier = {
-				command = 'prettier',
-				args = { '--stdin-filepath', '%filename' }
-			  }
-			},
-			formatFiletypes = {
-			  css = 'prettier',
-			  javascript = 'eslint_d',
-			  javascriptreact = 'eslint_d',
-			  vue = 'eslind_d',
-			  json = 'prettier',
-			  scss = 'prettier',
-			  less = 'prettier',
-			  typescript = 'eslint_d',
-			  typescriptreact = 'eslint_d',
-			  json = 'prettier',
-			  markdown = 'prettier',
-			}
-		  }
-	}
+
+	local lsp_installer = require("nvim-lsp-installer")
+
+	lsp_installer.setup{}
+
+	-- do i need this anymore?
+	-- nvim_lsp.diagnosticls.setup {
+	--   on_attach = on_attach,
+	--   filetypes = { 'javascript', 'javascriptreact', 'json', 'vue', 'blade', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+	--   init_options = {
+	-- 		linters = {
+	-- 		  eslint = {
+	-- 			command = 'eslint_d',
+	-- 			rootPatterns = { '.git' },
+	-- 			debounce = 100,
+	-- 			args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
+	-- 			sourceName = 'eslint_d',
+	-- 			parseJson = {
+	-- 			  errorsRoot = '[0].messages',
+	-- 			  line = 'line',
+	-- 			  column = 'column',
+	-- 			  endLine = 'endLine',
+	-- 			  endColumn = 'endColumn',
+	-- 			  message = '[eslint] ${message} [${ruleId}]',
+	-- 			  security = 'severity'
+	-- 			},
+	-- 			securities = {
+	-- 			  [2] = 'error',
+	-- 			  [1] = 'warning'
+	-- 			}
+	-- 		  },
+	-- 		},
+	-- 		filetypes = {
+	-- 		  vue = 'eslint',
+	-- 		  javascript = 'eslint',
+	-- 		  javascriptreact = 'eslint',
+	-- 		  typescript = 'eslint',
+	-- 		  typescriptreact = 'eslint',
+	-- 		},
+	-- 		formatters = {
+	-- 		  eslint_d = {
+	-- 			command = 'eslint_d',
+	-- 			args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
+	-- 			rootPatterns = { '.git' },
+	-- 		  },
+	-- 		  prettier = {
+	-- 			command = 'prettier',
+	-- 			args = { '--stdin-filepath', '%filename' }
+	-- 		  }
+	-- 		},
+	-- 		formatFiletypes = {
+	-- 		  css = 'prettier',
+	-- 		  javascript = 'eslint_d',
+	-- 		  javascriptreact = 'eslint_d',
+	-- 		  vue = 'eslind_d',
+	-- 		  json = 'prettier',
+	-- 		  scss = 'prettier',
+	-- 		  less = 'prettier',
+	-- 		  typescript = 'eslint_d',
+	-- 		  typescriptreact = 'eslint_d',
+	-- 		  json = 'prettier',
+	-- 		  markdown = 'prettier',
+	-- 		}
+	-- 	  }
+	-- }
 	
 	nvim_lsp.rust_analyzer.setup({
 		on_attach=on_attach,
@@ -131,25 +136,32 @@ local on_attach = function(client, bufnr)
 	nvim_lsp.emmet_ls.setup({
 		-- on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = { "html", "blade", "css", "typescriptreact", "javascriptreact" },
+		filetypes = { "html", "vue", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact", "javascriptreact"},
+	})
+
+	nvim_lsp.volar.setup({
+		capabilities = capabilities,
+		filetypes = { "typescript", "javascript", "vue", "json"}
+	})
+
+	nvim_lsp.tailwindcss.setup({
+		capabilities = capabilities,
+		filetypes = { "blade", "html", "php", "css", "less", "postcss", "sass", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"}
 	})
 
 	nvim_lsp.intelephense.setup({
 		capabilities = capabilities,
-		filetypes = { "*.php", "*.phtml", "*.blade.php" },
+		filetypes = { "php", "phtml", "blade.php"},
 	})
 
+	nvim_lsp.gopls.setup{}
 
-local lsp_installer = require("nvim-lsp-installer")
+	nvim_lsp.bashls.setup{}
 
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-		on_attach = on_attach,
-		}
+	nvim_lsp.vimls.setup{}
 
-    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-    server:setup(opts)
-	-- vim.cmd [[ do User LspAttachBuffers ]]
-end)
+	nvim_lsp.clangd.setup{}
+
+	nvim_lsp.tsserver.setup{}
 
 EOF
