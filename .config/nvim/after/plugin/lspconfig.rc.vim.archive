@@ -50,67 +50,6 @@ local on_attach = function(client, bufnr)
 	local lsp_installer = require("nvim-lsp-installer")
 
 	lsp_installer.setup{}
-
-	-- do i need this anymore?
-	-- nvim_lsp.diagnosticls.setup {
-	--   on_attach = on_attach,
-	--   filetypes = { 'javascript', 'javascriptreact', 'json', 'vue', 'blade', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
-	--   init_options = {
-	-- 		linters = {
-	-- 		  eslint = {
-	-- 			command = 'eslint_d',
-	-- 			rootPatterns = { '.git' },
-	-- 			debounce = 100,
-	-- 			args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
-	-- 			sourceName = 'eslint_d',
-	-- 			parseJson = {
-	-- 			  errorsRoot = '[0].messages',
-	-- 			  line = 'line',
-	-- 			  column = 'column',
-	-- 			  endLine = 'endLine',
-	-- 			  endColumn = 'endColumn',
-	-- 			  message = '[eslint] ${message} [${ruleId}]',
-	-- 			  security = 'severity'
-	-- 			},
-	-- 			securities = {
-	-- 			  [2] = 'error',
-	-- 			  [1] = 'warning'
-	-- 			}
-	-- 		  },
-	-- 		},
-	-- 		filetypes = {
-	-- 		  vue = 'eslint',
-	-- 		  javascript = 'eslint',
-	-- 		  javascriptreact = 'eslint',
-	-- 		  typescript = 'eslint',
-	-- 		  typescriptreact = 'eslint',
-	-- 		},
-	-- 		formatters = {
-	-- 		  eslint_d = {
-	-- 			command = 'eslint_d',
-	-- 			args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
-	-- 			rootPatterns = { '.git' },
-	-- 		  },
-	-- 		  prettier = {
-	-- 			command = 'prettier',
-	-- 			args = { '--stdin-filepath', '%filename' }
-	-- 		  }
-	-- 		},
-	-- 		formatFiletypes = {
-	-- 		  css = 'prettier',
-	-- 		  javascript = 'eslint_d',
-	-- 		  javascriptreact = 'eslint_d',
-	-- 		  vue = 'eslind_d',
-	-- 		  json = 'prettier',
-	-- 		  scss = 'prettier',
-	-- 		  less = 'prettier',
-	-- 		  typescript = 'eslint_d',
-	-- 		  typescriptreact = 'eslint_d',
-	-- 		  json = 'prettier',
-	-- 		  markdown = 'prettier',
-	-- 		}
-	-- 	  }
-	-- }
 	
 	nvim_lsp.rust_analyzer.setup({
 		on_attach=on_attach,
@@ -136,22 +75,27 @@ local on_attach = function(client, bufnr)
 	nvim_lsp.emmet_ls.setup({
 		-- on_attach = on_attach,
 		capabilities = capabilities,
-		filetypes = { "html", "vue", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact", "javascriptreact"},
+		filetypes = { "html", "vue", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact", "javascriptreact" },
+	})
+
+	nvim_lsp.html.setup({
+		capabilities = capabilities,
+		filetypes = { "html", "blade" }
 	})
 
 	nvim_lsp.volar.setup({
 		capabilities = capabilities,
-		filetypes = { "typescript", "javascript", "vue", "json"}
+		filetypes = { "typescript", "javascript", "vue", "json" }
 	})
 
 	nvim_lsp.tailwindcss.setup({
 		capabilities = capabilities,
-		filetypes = { "blade", "html", "php", "css", "less", "postcss", "sass", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue"}
+		filetypes = { "blade", "html", "php", "css", "less", "postcss", "sass", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" }
 	})
 
 	nvim_lsp.intelephense.setup({
 		capabilities = capabilities,
-		filetypes = { "php", "phtml", "blade.php"},
+		filetypes = { "php", "phtml", "blade" }
 	})
 
 	nvim_lsp.gopls.setup{}
@@ -163,5 +107,28 @@ local on_attach = function(client, bufnr)
 	nvim_lsp.clangd.setup{}
 
 	nvim_lsp.tsserver.setup{}
+
+	nvim_lsp.sumneko_lua.setup {
+	  settings = {
+		Lua = {
+		  runtime = {
+			-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+			version = 'LuaJIT',
+		  },
+		  diagnostics = {
+			-- Get the language server to recognize the `vim` global
+			globals = {'vim'},
+		  },
+		  workspace = {
+			-- Make the server aware of Neovim runtime files
+			library = vim.api.nvim_get_runtime_file("", true),
+		  },
+		  -- Do not send telemetry data containing a randomized but unique identifier
+		  telemetry = {
+			enable = false,
+		  },
+		},
+	  },
+	}
 
 EOF
