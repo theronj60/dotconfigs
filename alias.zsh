@@ -46,9 +46,6 @@ alias pulldev="git pull origin dev"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main)\" | xargs git branch -d"
 
 # tmux ======================== 
-alias godev="tmux rename-session golang && tmux rename-window code"
-alias joedev="cd ~/code/projects/real-world/joetwebdev && tmux rename-session joet && tmux rename-window code && tmux new-window -n npm"
-alias nftdev="tmux rename-session solana && tmux rename-window code"
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"
@@ -58,6 +55,10 @@ alias detach="tmux detach"
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"
 
 # Functions ========================
+
+function build() { 
+	g++ --std=gnu++20 -o "$1" "$2.cpp"
+}
 
 # copy contents of a file
 # ex. copy file-name
