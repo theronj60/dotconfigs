@@ -37,16 +37,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
 "----Theme
-"---testing themes
-Plug 'ellisonleao/gruvbox.nvim'
-Plug 'NTBBloodbath/doom-one.nvim'
-Plug 'sainnhe/edge'
-Plug 'cloudlena/nvim-quantum'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'rose-pine/neovim'
-"---end testing
-" Plug 'ful1e5/onedark.nvim'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'navarasu/onedark.nvim'
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 "----Diagnostic

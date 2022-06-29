@@ -9,7 +9,6 @@ set background=dark
 set termguicolors
 
 let g:netrw_banner = 0
-" let g:nvim_tree_quit_on_open = 1
 
 " Rainbow Parenthesis
 let g:rbpt_colorpairs = [
@@ -17,12 +16,6 @@ let g:rbpt_colorpairs = [
 \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
-
-let g:onedark_transparent_sidebar = "false"
-
-" let g:tokyonight_style = "storm"
-" let g:tokyonight_transparent = "true"
-" let g:tokyonight_transparent_sidebar = "true"
 
 " set colorscheme based on time
 " use vimdark from 9pm to 10am
@@ -32,13 +25,14 @@ let g:onedark_transparent_sidebar = "false"
 "     colorscheme vimlight
 " endif
 
-" colorscheme tokyonight
-" colorscheme gruvbox
-colorscheme onehalfdark
-" colorscheme onedark
-hi LineNr guibg=NONE ctermbg=NONE
-highlight! link SignColumn LineNr
-hi Normal guibg=NONE ctermbg=NONE
+let g:onedark_config = {
+	\ 'style': 'cool',
+	\ 'transparent': v:true,
+	\ 'diagnostics': {
+		\ 'darker': v:false,
+  \ },
+\ }
+colorscheme onedark
 
 "-------------Vim Setup--------------"
 "vim settings"
@@ -63,15 +57,6 @@ set nowrap
 set scrolloff=6
 set linespace=30
 set backspace=indent,eol,start
-
-" Define some single Blade directives. This variable is used for highlighting only.
-let g:blade_custom_directives = ['datetime', 'javascript']
-
-" Define pairs of Blade directives. This variable is used for highlighting and indentation.
-let g:blade_custom_directives_pairs = {
-      \   'markdown': 'endmarkdown',
-      \   'cache': 'endcache',
-      \ }
 
 " Matching tags
 let g:vim_matchtag_enable_by_default = 1
