@@ -52,7 +52,8 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 "
 "----Language Servers
 Plug 'neovim/nvim-lspconfig'
-Plug 'tami5/lspsaga.nvim'
+" Plug 'tami5/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 Plug 'williamboman/nvim-lsp-installer'
 
 " List ends here. Plugins become visible to Vim after this call.

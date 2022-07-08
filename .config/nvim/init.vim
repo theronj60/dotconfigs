@@ -25,15 +25,6 @@ let g:rbpt_loadcmd_toggle = 0
 "     colorscheme vimlight
 " endif
 
-let g:onedark_config = {
-	\ 'style': 'cool',
-	\ 'transparent': v:true,
-	\ 'diagnostics': {
-		\ 'darker': v:false,
-  \ },
-\ }
-colorscheme onedark
-
 "-------------Vim Setup--------------"
 "vim settings"
 
