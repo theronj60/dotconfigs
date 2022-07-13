@@ -39,7 +39,7 @@ local lsp_flags = {
 
 local nvim_lsp = require('lspconfig')
 local lsp_installer = require("nvim-lsp-installer")
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp_installer.setup {}
@@ -76,11 +76,17 @@ nvim_lsp.html.setup({
 	filetypes = { "html", "blade" }
 })
 
-nvim_lsp.volar.setup({
+-- nvim_lsp.volar.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+-- })
+
+nvim_lsp.tsserver.setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
-})
+	{ "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+}
 
 nvim_lsp.tailwindcss.setup({
 	on_attach = on_attach,
@@ -111,6 +117,21 @@ nvim_lsp.vimls.setup {
 }
 
 nvim_lsp.clangd.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+nvim_lsp.jedi_language_server.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+nvim_lsp.yamlls.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+nvim_lsp.jsonls.setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
