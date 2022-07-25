@@ -25,6 +25,9 @@ let g:rbpt_loadcmd_toggle = 0
 "     colorscheme vimlight
 " endif
 
+let g:conjure#client#scheme#stdio#command = "csi -quiet -:c"
+let g:conjure#client#scheme#stdio#prompt_pattern = "\n-#;%d-> "
+
 "-------------Vim Setup--------------"
 "vim settings"
 

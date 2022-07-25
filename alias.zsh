@@ -6,7 +6,7 @@ alias customzsh="cd ~/.oh-my-zsh/custom"
 
 # system ======================== 
 alias home="cd ~"
-alias cl="clear"
+alias ks="clear"
 alias la="ls -a"
 alias laa="ls -la"
 # Lock the screen (when going AFK)

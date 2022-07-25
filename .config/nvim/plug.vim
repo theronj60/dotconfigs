@@ -38,7 +38,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
 "----Theme
 Plug 'navarasu/onedark.nvim'
-"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 "----Diagnostic
@@ -52,9 +51,10 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 "
 "----Language Servers
 Plug 'neovim/nvim-lspconfig'
-" Plug 'tami5/lspsaga.nvim'
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'Olical/conjure'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

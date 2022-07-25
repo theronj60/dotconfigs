@@ -7,8 +7,8 @@ imap jk <Esc>
 " Vim Buffers
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent><Space>0 :BufferLineCycleNext<CR>
-nnoremap <silent><Space>9 :BufferLineCyclePrev<CR>
+nnoremap <silent><Space>) :BufferLineCycleNext<CR>
+nnoremap <silent><Space>( :BufferLineCyclePrev<CR>
 nnoremap <silent><Space><< :BufferLineMovePrev<CR>
 nnoremap <silent><Space>>> :BufferLineMoveNext<CR>
 
@@ -32,8 +32,8 @@ nnoremap <Space>C :close<CR>
 nnoremap <leader>ss :split<return><C-w>w
 nnoremap <leader>sv :vsplit<return><C-w>w
 nnoremap <leader><Space> <C-w>w
-nnoremap <silent><C-e>e :vertical resize +10<CR>
-nnoremap <silent><C-e>s :vertical resize -10<CR>
+nnoremap <silent><C-w>e :vertical resize +10<CR>
+nnoremap <silent><C-w>s :vertical resize -10<CR>
 "navigate to left window
 " nnoremap <Space>h <C-w>h
 "navigate to right window
