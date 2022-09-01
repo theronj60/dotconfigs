@@ -39,8 +39,14 @@ saga.init_lsp_saga({
         sign_priority = 20,
         virtual_text = true,
     },
+	-- finder icons
+	finder_icons = {
+	  def = '  ',
+	  ref = '諭 ',
+	  link = '  ',
+	},
     -- separator in finder
-    finder_separator = "  ",
+    -- finder_separator = "  ",
     -- preview lines of lsp_finder and definition preview
     max_preview_lines = 10,
     finder_action_keys = {
@@ -79,9 +85,10 @@ saga.init_lsp_saga({
 vim.keymap.set("n", "<space><space>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<space>dp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<space>e", "<cmd>Lspsaga show_line_diagnostics<CR>", { silent = true, noremap = true })
-vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc <CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<C-x>", "<cmd>Lspsaga hover_doc <CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder <CR>", { silent = true, noremap = true })
-vim.keymap.set("n", "gj", "<cmd>Lspsaga signature_help <CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<C-h>", "<cmd>Lspsaga signature_help <CR>", { silent = true, noremap = true })
+vim.keymap.set("i", "<C-h>", "<cmd>Lspsaga signature_help <CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>t", "<cmd>Lspsaga open_floaterm <CR>", { silent = true, noremap = true })
 vim.keymap.set("t", "<leader>\\", "<cmd>Lspsaga close_floaterm <CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action <CR>", { silent = true, noremap = true })

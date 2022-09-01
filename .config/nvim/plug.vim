@@ -22,6 +22,7 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'andweeb/presence.nvim'
 Plug 'tpope/vim-dispatch'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 "----Icons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
@@ -39,9 +40,10 @@ Plug 'ThePrimeagen/harpoon'
 "----Theme
 Plug 'navarasu/onedark.nvim'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'akinsho/bufferline.nvim'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 "----Diagnostic
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter-context'
 "----Auto-Completion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'

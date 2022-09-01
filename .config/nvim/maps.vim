@@ -2,13 +2,16 @@
 "Custom key bindings"
 
 " Vim exit modes
-imap jk <Esc>
+inoremap jk <Esc>
+" switched movement for new keyboard
+nnoremap t l
+vnoremap t l
 
 " Vim Buffers
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent><Space>) :BufferLineCycleNext<CR>
-nnoremap <silent><Space>( :BufferLineCyclePrev<CR>
+nnoremap <silent><Space>] :BufferLineCycleNext<CR>
+nnoremap <silent><Space>{ :BufferLineCyclePrev<CR>
 nnoremap <silent><Space><< :BufferLineMovePrev<CR>
 nnoremap <silent><Space>>> :BufferLineMoveNext<CR>
 

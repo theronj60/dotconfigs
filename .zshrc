@@ -81,4 +81,4 @@ fpath=($fpath "/Users/theronjoe/.zfunctions")
 autoload -U promptinit; promptinit
 prompt typewritten
 
-fpath=($fpath "/Users/theronjoe/.zfunctions")
+
