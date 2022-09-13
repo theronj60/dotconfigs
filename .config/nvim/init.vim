@@ -54,7 +54,7 @@ set backspace=indent,eol,start
 
 " Matching tags
 let g:vim_matchtag_enable_by_default = 1
-let g:vim_matchtag_files = '*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.php,*.blade'
+let g:vim_matchtag_files = '*.astro,*.html,*.js,*.jsx,*.vue,*.svelte,*.jsp,*.php,*.blade'
 
 " Snippets
 let g:UltiSnipsSnippetDirectories = ['UltiSnips']
@@ -79,6 +79,7 @@ augroup autosourcing
     autocmd!
     autocmd BufWritePost $MYVIMRC source %
 	autocmd BufRead,BufNewFile *.blade.php set filetype=blade
+	autocmd BufRead,BufEnter *.astro set filetype=astro
 	" Trigger `autoread` when files changes on disk
 	autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
 		\ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif

@@ -37,13 +37,13 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-local nvim_lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+local nvim_lsp = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 nvim_lsp.rust_analyzer.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -82,16 +82,16 @@ nvim_lsp.volar.setup({
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
 })
 
-nvim_lsp.tsserver.setup{
+nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	{ "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
-}
+})
 
 nvim_lsp.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "blade", "html", "php", "css", "less", "postcss", "sass", "scss", "javascript", "javascriptreact",
+	filetypes = { "blade", "html", "php", "css", "less", "postcss", "sass", "scss", "astro", "javascript", "javascriptreact",
 		"typescript", "typescriptreact", "vue" }
 })
 
@@ -100,6 +100,16 @@ nvim_lsp.intelephense.setup({
 	capabilities = capabilities,
 	filetypes = { "php", "phtml", "blade" }
 })
+
+nvim_lsp.astro.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	init_options = {
+		typescript = {
+			serverPath = "/Users/theronjoe/.local/share/nvim/lsp_servers/vscode-langservers-extracted/node_modules/typescript/lib/tsserverlibrary.js",
+		}
+    }
+}
 
 nvim_lsp.gopls.setup {
 	on_attach = on_attach,
@@ -121,17 +131,17 @@ nvim_lsp.clangd.setup {
 	capabilities = capabilities,
 }
 
-nvim_lsp.jedi_language_server.setup{
+nvim_lsp.jedi_language_server.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
 
-nvim_lsp.yamlls.setup{
+nvim_lsp.yamlls.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
 
-nvim_lsp.jsonls.setup{
+nvim_lsp.jsonls.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
