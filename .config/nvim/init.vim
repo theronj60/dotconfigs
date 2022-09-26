@@ -28,6 +28,9 @@ let g:rbpt_loadcmd_toggle = 0
 let g:conjure#client#scheme#stdio#command = "csi -quiet -:c"
 let g:conjure#client#scheme#stdio#prompt_pattern = "\n-#;%d-> "
 
+" OSX godot exe
+let g:godot_executable = '/Applications/Godot.app/Contents/MacOs/Godot'
+
 "-------------Vim Setup--------------"
 "vim settings"
 

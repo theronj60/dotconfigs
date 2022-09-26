@@ -25,6 +25,7 @@ alias stopgres="brew services stop postgresql"
 alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
+alias godot="nvim --listen godothost ."
 
 # software ======================== 
 alias python="python3"

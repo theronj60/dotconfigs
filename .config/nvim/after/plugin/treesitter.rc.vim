@@ -18,6 +18,7 @@ require'nvim-treesitter.configs'.setup {
     "toml",
 	"dockerfile",
     "php",
+	"gdscript",
 	"python",
     "json",
     "yaml",
