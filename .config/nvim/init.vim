@@ -35,6 +35,7 @@ let g:godot_executable = '/Applications/Godot.app/Contents/MacOs/Godot'
 "vim settings"
 
 syntax on
+set mouse=
 set t_Co=256
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()

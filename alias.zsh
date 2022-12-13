@@ -26,10 +26,13 @@ alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
 alias godot="nvim --listen godothost ."
+# workplace ========================
+alias startholbrook="docker start \$(docker ps -a -q --filter \"name=holbrook\")"
+alias stopholbrook="docker stop \$(docker ps -a -q --filter \"name=holbrook\")"
 
 # software ======================== 
-alias python="python3"
-alias py="python"
+# alias python="python3"
+# alias py="python"
 alias vim="nvim"
 alias vi="nvim"
 
@@ -122,3 +125,4 @@ function iconpaste() {
 
 	# ex. "$@.blade.php"
 }
+

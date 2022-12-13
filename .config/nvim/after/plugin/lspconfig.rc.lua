@@ -30,7 +30,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-	vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+	vim.keymap.set('n', '<space>f', vim.lsp.buf.format, bufopts)
 end
 
 local lsp_flags = {
@@ -42,7 +42,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 
 local nvim_lsp = require('lspconfig')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local util = require 'lspconfig.util'
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -152,6 +152,11 @@ nvim_lsp.yamlls.setup {
 }
 
 nvim_lsp.jsonls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+nvim_lsp.prismals.setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
 }
