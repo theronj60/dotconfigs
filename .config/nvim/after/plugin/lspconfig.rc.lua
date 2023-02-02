@@ -78,17 +78,22 @@ nvim_lsp.html.setup({
 	filetypes = { "html", "blade" }
 })
 
-nvim_lsp.volar.setup({
+nvim_lsp.volar.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
-})
+	init_options = {
+		typescript = {
+			tsdk = '../.yarn/sdks/typescript/lib/'
+		}
+	},
+	filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
+}
 
-nvim_lsp.tsserver.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	{ "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
-})
+-- nvim_lsp.tsserver.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- 	{ "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+-- })
 
 nvim_lsp.tailwindcss.setup({
 	on_attach = on_attach,
@@ -103,7 +108,7 @@ nvim_lsp.intelephense.setup({
 	filetypes = { "php", "phtml", "blade" }
 })
 
-nvim_lsp.gdscript.setup{
+nvim_lsp.gdscript.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = { "nc", "localhost", "6008" },
@@ -118,7 +123,7 @@ nvim_lsp.astro.setup {
 		typescript = {
 			serverPath = "/Users/theronjoe/.local/share/nvim/lsp_servers/vscode-langservers-extracted/node_modules/typescript/lib/tsserverlibrary.js",
 		}
-    }
+	}
 }
 
 nvim_lsp.gopls.setup {
@@ -156,7 +161,7 @@ nvim_lsp.jsonls.setup {
 	capabilities = capabilities,
 }
 
-nvim_lsp.prismals.setup{
+nvim_lsp.prismals.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
 }

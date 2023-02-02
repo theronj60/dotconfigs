@@ -26,9 +26,10 @@ alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
 alias godot="nvim --listen godothost ."
-# workplace ========================
-alias startholbrook="docker start \$(docker ps -a -q --filter \"name=holbrook\")"
-alias stopholbrook="docker stop \$(docker ps -a -q --filter \"name=holbrook\")"
+# workplace =======================
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias startholbrook="docker start \$(docker ps -a -q --filter \"name=master\") && echo '\nHolbrook docker instances have been started.'"
+alias stopholbrook="docker stop \$(docker ps -a -q --filter \"name=master\") && echo '\nHolbrook docker instances have been stopped.'"
 
 # software ======================== 
 # alias python="python3"
@@ -95,12 +96,14 @@ function readman() {
 function setworktree() { 
 	# copy env
 	cp ../master/.env .env
-	npm install
-	composer install
-	tmux rename-window "$@" 
+	cp ../master/docker-compose.yml docker-compose.yml
 	tmux split-window -h -p 33 -c "#{pane_current_path}"
+	# sail build
+	# sail up
+	# tmux split-window -v -p 50 -c "#{pane_current_path}"
+	# sail composer install && sail yarn install
+	# tmux rename-window "$@" 
 	# passed in input would be branch number
-	valet link "$@".v3_admin
 }
 
 function removewt() {

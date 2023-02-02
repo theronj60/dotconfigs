@@ -1,4 +1,4 @@
-local saga = require 'lspsaga'
+require('lspsaga').setup({
 
 -- change the lsp symbol kind
 -- local kind = require('lspsaga.lspkind')
@@ -8,7 +8,7 @@ local saga = require 'lspsaga'
 -- saga.init_lsp_saga()
 
 -- use custom config
-saga.init_lsp_saga({
+-- saga.init_lsp_saga({
     -- "single" | "double" | "rounded" | "bold" | "plus"
     border_style = "rounded",
     -- when cursor in saga window you config these to move
@@ -84,6 +84,6 @@ vim.keymap.set("n", "<C-x>", "<cmd>Lspsaga hover_doc <CR>", { silent = true, nor
 vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder <CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<C-h>", "<cmd>Lspsaga signature_help <CR>", { silent = true, noremap = true })
 vim.keymap.set("i", "<C-h>", "<cmd>Lspsaga signature_help <CR>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>t", "<cmd>Lspsaga open_floaterm <CR>", { silent = true, noremap = true })
-vim.keymap.set("t", "<leader>\\", "<cmd>Lspsaga close_floaterm <CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>t", "<cmd>Lspsaga term_toggle <CR>", { silent = true, noremap = true })
+vim.keymap.set("t", "<leader>\\", "<cmd>Lspsaga term_toggle <CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action <CR>", { silent = true, noremap = true })
