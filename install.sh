@@ -8,4 +8,7 @@
 # check for gcc
 # add tmux
 
+# bin location
+# $HOME/.local/bin
+# link sh files to bin
 echo 'Hello, World!'

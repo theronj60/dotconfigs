@@ -5,7 +5,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 export PATH="/opt/homebrew/sbin:$PATH"
 # Created by `pipx` on 2021-08-02 22:07:37
-export PATH="$PATH:/Users/theronjoe/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
@@ -75,28 +75,27 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias are being loaded from the /.oh-my-zsh/custom folder. 
 
-
 fpath=($fpath "/Users/theronjoe/.zfunctions")
 
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
 prompt typewritten
 
-
-
 # >>> conda initialize >>>
-# check and test this, would rather start it manually
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/anaconda3/bin:$PATH"
-    fi
+# needs to handle error @TODO
+if [ -f *.py  ]; then
+	__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+	if [ $? -eq 0 ]; then
+		eval "$__conda_setup"
+	else
+		if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+			. "/opt/anaconda3/etc/profile.d/conda.sh"
+		else
+			export PATH="/opt/anaconda3/bin:$PATH"
+		fi
+	fi
+	unset __conda_setup
 fi
-unset __conda_setup
 # <<< conda initialize <<<
 

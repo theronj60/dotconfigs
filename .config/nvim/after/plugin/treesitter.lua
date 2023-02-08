@@ -1,9 +1,3 @@
-if !exists('g:loaded_nvim_treesitter')
-  echom "Not loaded treesitter"
-  finish
-endif
-
-lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -11,6 +5,8 @@ require'nvim-treesitter.configs'.setup {
   indent = {
     enable = true,
   },
+  sync_install = false,
+  auto_install = true,
   ensure_installed = {
 	"astro",
     "tsx",
@@ -34,9 +30,8 @@ require'nvim-treesitter.configs'.setup {
 	"vim",
 	"go"
   },
+  additional_vim_regex_highlighting = false,
 }
 
 local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.blade = "html" 
-
-EOF
+ft_to_parser.blade = "html"
