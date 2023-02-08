@@ -32,7 +32,8 @@ return require('packer').startup(function(use)
 		use('andweeb/presence.nvim')
 		use('tpope/vim-dispatch')
 		use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-		use "terrortylor/nvim-comment"
+		use ('terrortylor/nvim-comment')
+		use ('airblade/vim-gitgutter')
 		-- File Nav
 		use {
 			'nvim-tree/nvim-tree.lua',
@@ -48,17 +49,50 @@ return require('packer').startup(function(use)
 		use { 'akinsho/bufferline.nvim',
 			tag = "v3.*",
 			requires = 'nvim-tree/nvim-web-devicons',
-			after = "catppuccin",
-			config = function()
-				require("bufferline").setup {
-					highlights = require("catppuccin.groups.integrations.bufferline").get()
-				}
-			end
+			-- after = "catppuccin",
+			-- config = function()
+			-- 	require("bufferline").setup {
+			-- 		highlights = require("catppuccin.groups.integrations.bufferline").get()
+			-- 	}
+			-- end
 		}
 		use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 		use('nvim-treesitter/nvim-treesitter-context')
+
 		use('folke/tokyonight.nvim')
 		use { "catppuccin/nvim", as = "catppuccin" }
+		use({
+			'jessarcher/onedark.nvim',
+			config = function()
+				vim.cmd('colorscheme onedark')
+
+				vim.cmd [[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
+				vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+				vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+				-- Hide the characters in FloatBorder
+				vim.api.nvim_set_hl(0, 'FloatBorder', {
+					fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+					bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
+				})
+
+				-- Make the StatusLineNonText background the same as StatusLine
+				vim.api.nvim_set_hl(0, 'StatusLineNonText', {
+					fg = vim.api.nvim_get_hl_by_name('NonText', true).foreground,
+					bg = vim.api.nvim_get_hl_by_name('StatusLine', true).background,
+				})
+
+				-- Hide the characters in CursorLineBg
+				vim.api.nvim_set_hl(0, 'CursorLineBg', {
+					fg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+					bg = vim.api.nvim_get_hl_by_name('CursorLine', true).background,
+				})
+
+				vim.api.nvim_set_hl(0, 'NvimTreeIndentMarker', { fg = '#30323E' })
+				vim.api.nvim_set_hl(0, 'IndentBlanklineChar', { fg = '#2F313C' })
+			end,
+		})
+
 		use {
 			'nvim-telescope/telescope.nvim', tag = '0.1.1',
 			-- or                            , branch = '0.1.x',

@@ -7,11 +7,7 @@ vim.opt.termguicolors = true
 -- vim.cmd [[colorscheme tokyonight]]
 vim.opt.background = "dark"
 
-vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-
---syntax on
+vim.opt.syntax = "on"
 vim.opt.mouse = ""
 --vim.opt.t_Co == 256
 --vim.opt.foldmethod=expr

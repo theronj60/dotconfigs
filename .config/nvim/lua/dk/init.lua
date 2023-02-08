@@ -50,6 +50,6 @@ vim.cmd([[
 		autocmd FileChangedShellPost *
 		  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 		" Updates git gutter on save
-		" autocmd BufWritePost * GitGutter
+		autocmd BufWritePost * GitGutter
 	augroup END
 ]])
