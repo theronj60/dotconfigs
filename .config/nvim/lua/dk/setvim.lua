@@ -3,7 +3,8 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
-vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[colorscheme tokyonight]]
 vim.opt.background = "dark"
 
 vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]

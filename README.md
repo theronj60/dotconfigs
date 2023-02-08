@@ -16,8 +16,10 @@ alias.zsh is usually found or created in the oh-my-zsh custom folder if you
 ## Neovim
 PDE - [Neovim](https://neovim.io) <br>
 Neovim was installed through [Homebrew](https://brew.sh/) with ``brew install neovim`` <br>
-The package manager being used is [vim-plug](https://github.com/junegunn/vim-plug)
+The package manager being used is [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ## Tmux
 Plugins and settings found in [tmux-config](https://github.com/theronj60/dotconfigs/blob/master/.tmux.conf)
 
+## Theme
+Theme is [Cattpuccin-Mocha](https://github.com/catppuccin/nvim)
