@@ -3,7 +3,7 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-	'tsserver',
+	'volar',
 	'sumneko_lua',
 	'rust_analyzer',
 })
@@ -17,6 +17,18 @@ lsp.configure('sumneko_lua', {
 			}
 		}
 	}
+})
+
+lsp.configure('emmet_ls', {
+	filetypes = { "html", "vue", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact", "javascriptreact" },
+})
+
+lsp.configure('html', {
+	filetypes = { "html", "blade" }
+})
+
+lsp.configure('volar',{
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
 })
 
 
@@ -37,7 +49,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-	suggest_lsp_servers = false,
+	suggest_lsp_servers = true,
 	sign_icons = {
 		error = '',
 		warn = '',
