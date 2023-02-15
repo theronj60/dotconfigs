@@ -27,10 +27,22 @@ lsp.configure('html', {
 	filetypes = { "html", "blade" }
 })
 
+lsp.configure('pylsp', {
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'E302'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+})
+
 lsp.configure('volar',{
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
 })
-
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

@@ -1,10 +1,10 @@
-# zsh ======================== 
+# zsh ========================
 alias reloadzsh="source ~/.zshrc && echo 'Zsh Refreshed!'"
 alias reloadtmux="tmux source ~/.tmux.conf && echo 'Tmux Refreshed!'"
 alias reloadrice="source ~/.zshrc && tmux source ~/.tmux.conf && echo 'Setup Refreshed!'"
 alias customzsh="cd ~/.oh-my-zsh/custom"
 
-# system ======================== 
+# system ========================
 alias home="cd ~"
 alias ks="clear"
 alias la="ls -a"
@@ -16,12 +16,12 @@ alias :q="exit"
 alias createlink="ln -nfs "
 alias bigsur="xcode-select --install"
 
-# brew ======================== 
+# brew ========================
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
 alias startgres="brew services start postgresql"
 alias stopgres="brew services stop postgresql"
 
-# dev commands ======================== 
+# dev commands ========================
 alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
@@ -31,13 +31,13 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 alias startholbrook="docker start \$(docker ps -a -q --filter \"name=master\") && echo '\nHolbrook docker instances have been started.'"
 alias stopholbrook="docker stop \$(docker ps -a -q --filter \"name=master\") && echo '\nHolbrook docker instances have been stopped.'"
 
-# software ======================== 
+# software ========================
 # alias python="python3"
 # alias py="python"
 alias vim="nvim"
 alias vi="nvim"
 
-# git ======================== 
+# git ========================
 alias g="git"
 alias ga="git add ."
 alias gc="git commit -m"
@@ -50,18 +50,18 @@ alias pullmain="git pull origin main"
 alias pulldev="git pull origin dev"
 alias clearbranches="git branch --merged | egrep -v \"(^\\*|master|production|main)\" | xargs git branch -d"
 
-# tmux ======================== 
+# tmux ========================
 # attach requires a specified target
 alias attach="tmux attach -t"
 alias detach="tmux detach"
 # alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" -- example
 
-# key ======================== 
+# key ========================
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"
 
 # Functions ========================
 
-function build() { 
+function build() {
 	g++ --std=gnu++20 -o "$1" "$2.cpp"
 }
 
@@ -93,7 +93,7 @@ function readman() {
 }
 
 # workflow for git worktrees(for day job)
-function setworktree() { 
+function setworktree() {
 	# copy env
 	cp ../master/.env .env
 	cp ../master/docker-compose.yml docker-compose.yml
@@ -102,7 +102,7 @@ function setworktree() {
 	# sail up
 	# tmux split-window -v -p 50 -c "#{pane_current_path}"
 	# sail composer install && sail yarn install
-	# tmux rename-window "$@" 
+	# tmux rename-window "$@"
 	# passed in input would be branch number
 }
 

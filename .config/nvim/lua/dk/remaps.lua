@@ -38,9 +38,9 @@ vim.keymap.set("i", "<C-j>", "<esc>:m .+1<CR>==")
 vim.keymap.set("i", "<C-k>", "<esc>:m .-2<CR>==")
 vim.keymap.set("n", "<leader>j", ":m.+1<CR>==")
 vim.keymap.set("n", "<leader>k", ":m.-2<CR>==")
--- Clipboard, c = copy, p = paste
-vim.keymap.set("v", "<leader>c", "*y<CR>")
-vim.keymap.set("n", "<leader>v", "*p<CR>")
+-- Clipboard, c = copy, v = paste
+vim.keymap.set('v', '<leader>b', '"*y<CR>')
+vim.keymap.set('n', '<leader>g', '"*p<CR>')
 -- New line up/down
 vim.keymap.set("n", "<leader>o", "o<Esc>")
 vim.keymap.set("n", "<leader>O", "O<Esc>")
