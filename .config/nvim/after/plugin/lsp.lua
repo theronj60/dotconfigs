@@ -4,12 +4,11 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
 	'volar',
-	'sumneko_lua',
 	'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
 	settings = {
 		Lua = {
 			diagnostics = {

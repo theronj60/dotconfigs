@@ -56,7 +56,7 @@ alias attach="tmux attach -t"
 alias detach="tmux detach"
 # alias tmuxdev="tmux split-window -v -p 30 && tmux split-window -h -p 66 && tmux split-window -h -p 50" -- example
 
-# key ========================
+# key ======================== need to run keygen on new systems
 alias getpub="cat ~/.ssh/id_ed25519.pub | pbcopy && echo 'Public Key copied to clipboard!'"
 
 # Functions ========================

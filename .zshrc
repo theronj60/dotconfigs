@@ -2,18 +2,21 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
-export PATH="/opt/homebrew/sbin:$PATH"
 # Created by `pipx` on 2021-08-02 22:07:37
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+	export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+	export PATH="/opt/homebrew/sbin:$PATH"
+	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+	export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+fi
 
 path+="$HOME/Library/Python/3.9/bin"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/theronjoe/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 eval "$(rbenv init - zsh)"
 
 ulimit -S -n 4096
@@ -73,9 +76,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-# Alias are being loaded from the /.oh-my-zsh/custom folder. 
+# Alias are being loaded from the /.oh-my-zsh/custom folder.
 
-fpath=($fpath "/Users/theronjoe/.zfunctions")
+fpath=($fpath "$HOME/.zfunctions")
 
 # Set typewritten ZSH as a prompt
 autoload -U promptinit; promptinit
