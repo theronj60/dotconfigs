@@ -96,15 +96,26 @@ function readman() {
 function setworktree() {
 	# copy env
 	cp ../master/.env .env
-	cp ../master/docker-compose.yml docker-compose.yml
+	npm install
+	composer install
+	tmux rename-window "$@"
 	tmux split-window -h -p 33 -c "#{pane_current_path}"
+	# passed in input would be branch number
+	valet link "$@".nos
+}
+# function setworktree() {
+	# copy env
+	# cp ../master/.env .env
+	# cp ../master/docker-compose.yml docker-compose.yml
+	# tmux split-window -h -p 33 -c "#{pane_current_path}"
 	# sail build
 	# sail up
 	# tmux split-window -v -p 50 -c "#{pane_current_path}"
+	# composer require laravel/sail --dev
 	# sail composer install && sail yarn install
 	# tmux rename-window "$@"
 	# passed in input would be branch number
-}
+# }
 
 function removewt() {
 	# passed in input would be branch number

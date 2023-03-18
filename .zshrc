@@ -8,7 +8,7 @@ export PATH="$PATH:/usr/local/go/bin"
 
 if [[ $OSTYPE == 'darwin'* ]]; then
 	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-	export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+	export PATH="/opt/homebrew/bin:$PATH"
 	export PATH="/opt/homebrew/sbin:$PATH"
 	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 	export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
