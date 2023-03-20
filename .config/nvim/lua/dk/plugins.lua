@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
 		use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
 		use ('terrortylor/nvim-comment')
 		use ('airblade/vim-gitgutter')
+		use ('voldikss/vim-floaterm')
 		-- File Nav
 		use {
 			'nvim-tree/nvim-tree.lua',
