@@ -12,6 +12,12 @@ lsp.ensure_installed({
 	'rust_analyzer',
 })
 
+local util = require('lspconfig.util')
+
+lsp.configure('bashls', {
+	filetypes = { "sh", "zsh" }
+})
+
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
 	settings = {
@@ -24,11 +30,15 @@ lsp.configure('lua_ls', {
 })
 
 lsp.configure('emmet_ls', {
-	filetypes = { "html", "vue", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact", "javascriptreact" },
+	filetypes = { "html", "vue", "php", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact", "javascriptreact" },
 })
 
 lsp.configure('html', {
-	filetypes = { "html", "blade" }
+	filetypes = { "html", "php", "blade" }
+})
+
+lsp.configure('intelephense', {
+	root_dir  = util.root_pattern("composer.json", "wp-config.php") -- removed git for wordpress dev
 })
 
 lsp.configure('pylsp', {

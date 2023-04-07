@@ -18,6 +18,7 @@ alias bigsur="xcode-select --install"
 
 # brew ========================
 alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+# need to create docker instance for postpres at some point
 alias startgres="brew services start postgresql"
 alias stopgres="brew services stop postgresql"
 
@@ -28,8 +29,6 @@ alias pa="php artisan"
 alias godot="nvim --listen godothost ."
 # workplace =======================
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-alias startholbrook="docker start \$(docker ps -a -q --filter \"name=master\") && echo '\nHolbrook docker instances have been started.'"
-alias stopholbrook="docker stop \$(docker ps -a -q --filter \"name=master\") && echo '\nHolbrook docker instances have been stopped.'"
 
 # software ========================
 # alias python="python3"
@@ -69,6 +68,16 @@ function build() {
 # ex. copy file-name
 function copy() {
 	cat "$@" | pbcopy && echo 'Copied '$@''
+}
+
+function startdock() {
+	# docker function to start docker group instances
+	docker start $(docker ps -a -q --filter "name="$1"") && echo '\n '$1' docker instances have been started.'
+}
+
+function stopdock() {
+	# docker function to start docker group instances
+	docker stop $(docker ps -a -q --filter "name="$1"") && echo '\n '$1' docker instances have been stopped.'
 }
 
 function tx() {
@@ -128,15 +137,5 @@ function removewt() {
 function startdev() {
 	# cd "$@" && tmux rename-window laravel && tmux new-window -n watch && tmux select-window -t 0
 	cd "$@" && tmux rename-window "$@" && tmux split-window -h -p 33 -c "#{pane_current_path}"
-}
-
-function iconpaste() {
-  # file is created if doesnt exist
-  # $1 is the file name "test.svg" and $2 is the name of the blade file "test".blade.php
-  # $3 is the branch name
-  # standard would be to copy the first arguments name for the second argument
-	cat "$1" | pbcopy && pbpaste > /Users/theronjoe/code/holbrook/nos/$3/resources/views/components/icons/$2.blade.php && echo ''$2'.blade.php has been created from '$1''
-
-	# ex. "$@.blade.php"
 }
 
