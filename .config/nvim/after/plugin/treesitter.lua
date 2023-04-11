@@ -33,5 +33,6 @@ require'nvim-treesitter.configs'.setup {
   additional_vim_regex_highlighting = false,
 }
 
-local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.blade = "html"
+vim.treesitter.language.register('html', 'blade')  -- the someft filetype will use the python parser and queries.
+-- local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
+-- ft_to_parser.blade = "html"
