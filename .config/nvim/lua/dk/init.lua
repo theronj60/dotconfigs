@@ -35,7 +35,16 @@ local function open_nvim_tree(data)
 	-- open the tree
 	require("nvim-tree.api").tree.open()
 end
+
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+-- start conjure in file
+vim.cmd([[
+	let g:conjure#filetypes = ["scheme"]
+	let g:conjure#client#scheme#stdio#command = "csi -quiet -:c"
+	let g:conjure#client#scheme#stdio#prompt_pattern = "\n-#;%d-> "
+	" let g:conjure#log#hud#passive_close_delay = "99999"
+]])
 
 vim.cmd([[
 	augroup autosourcing

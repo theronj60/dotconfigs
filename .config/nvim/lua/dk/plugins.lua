@@ -102,7 +102,7 @@ return require('packer').startup(function(use)
 
 		use {
 			'VonHeikemen/lsp-zero.nvim',
-			branch = 'v1.x',
+			branch = 'v2.x',
 			requires = {
 				-- LSP Support
 				{ 'neovim/nvim-lspconfig' },
@@ -122,6 +122,8 @@ return require('packer').startup(function(use)
 				{ 'rafamadriz/friendly-snippets' },
 			}
 		}
+
+		use {'Olical/conjure'}
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins

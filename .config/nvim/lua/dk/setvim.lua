@@ -11,7 +11,7 @@ vim.opt.syntax = "on"
 vim.opt.mouse = ""
 --vim.opt.t_Co == 256
 -- vim.opt.foldmethod = "expr"
-vim.opt.foldmethod = "indent"
+-- vim.opt.foldmethod = "indent"
 --vim.opt.foldexpr=nvim_treesitter#foldexpr()
 --vim.opt.foldlevelstart=99
 --vim.opt.foldlevel=2
