@@ -44,11 +44,11 @@ local on_attach = function(_, bufnr)
 
 	buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-	vim.api.nvim_create_autocmd("InsertLeave", {
-		command = "w",
-		buffer = bufnr,
-		nested = true
-	})
+	-- vim.api.nvim_create_autocmd("InsertLeave", {
+	-- 	command = "w",
+	-- 	buffer = bufnr,
+	-- 	nested = true
+	-- })
 
 	-- Mappings.
 	local opts = { buffer = bufnr, noremap = true, silent = true }
@@ -106,10 +106,12 @@ lspconfig['rust_analyzer'].setup({
 })
 
 lsp.configure('bashls', {
+	on_attach = on_attach,
 	filetypes = { "sh", "zsh" }
 })
 
 lsp.configure('gopls', {
+	on_attach = on_attach,
 	settings = {
 		gopls = {
 			completeUnimported = true,
@@ -122,6 +124,7 @@ lsp.configure('gopls', {
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
+	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -132,19 +135,23 @@ lsp.configure('lua_ls', {
 })
 
 lsp.configure('emmet_ls', {
+	on_attach = on_attach,
 	filetypes = { "html", "vue", "php", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact",
 		"javascriptreact" },
 })
 
 lsp.configure('html', {
+	on_attach = on_attach,
 	filetypes = { "html", "php", "blade" }
 })
 
 lsp.configure('intelephense', {
+	on_attach = on_attach,
 	root_dir = util.root_pattern("composer.json", ".git") -- removed git for wordpress dev, , "wp-config.php"
 })
 
 lsp.configure('pylsp', {
+	on_attach = on_attach,
 	settings = {
 		pylsp = {
 			plugins = {
@@ -158,6 +165,7 @@ lsp.configure('pylsp', {
 })
 
 lsp.configure('volar', {
+	on_attach = on_attach,
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
 
