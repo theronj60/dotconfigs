@@ -33,7 +33,10 @@ return require('packer').startup(function(use)
 		use('tpope/vim-dispatch')
 		use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
 		use ('terrortylor/nvim-comment')
-		use ('airblade/vim-gitgutter')
+		use {
+			'airblade/vim-gitgutter',
+			branch = 'main',
+		}
 		use ('voldikss/vim-floaterm')
 		-- File Nav
 		use {

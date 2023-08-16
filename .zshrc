@@ -30,7 +30,6 @@ ulimit -S -n 4096
 # export FZF_CTRL_T_OPTS="--layout=reverse --border"
 # get and configure bat for fzf preview
 
-[ -f ~/.jira.zsh ] && source ~/.jira.zsh
 export EDITOR=nvim
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

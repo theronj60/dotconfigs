@@ -1,7 +1,7 @@
 -------------Key-Bindings--------------"
 --Vim exit modes
 vim.keymap.set("i", "jk", "<Esc>")
---switched movement for new keyboard
+--switched movement for new keyboard layout
 vim.keymap.set("n", "t", "l")
 vim.keymap.set("v", "t", "l")
 -- Vim Buffers
