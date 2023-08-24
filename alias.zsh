@@ -33,6 +33,7 @@ alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 # software ========================
 # alias python="python3"
 # alias py="python"
+alias orby="orbctl"
 alias vim="nvim"
 alias vi="nvim"
 

@@ -34,6 +34,9 @@ return require('packer').startup(function(use)
 		use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
 		use ('terrortylor/nvim-comment')
 		use {
+			'nvim-tree/nvim-web-devicons',
+		}
+		use {
 			'airblade/vim-gitgutter',
 			branch = 'main',
 		}
@@ -41,9 +44,6 @@ return require('packer').startup(function(use)
 		-- File Nav
 		use {
 			'nvim-tree/nvim-tree.lua',
-			requires = {
-				'nvim-tree/nvim-web-devicons', -- optional, for file icons
-			},
 			tag = 'nightly' -- optional, updated every week. (see issue #1193)
 		}
 		use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -51,8 +51,7 @@ return require('packer').startup(function(use)
 		use('ThePrimeagen/harpoon')
 		use('nvim-lualine/lualine.nvim')
 		use { 'akinsho/bufferline.nvim',
-			tag = "v3.*",
-			requires = 'nvim-tree/nvim-web-devicons',
+			tag = "*",
 			-- after = "catppuccin",
 			-- config = function()
 			-- 	require("bufferline").setup {
