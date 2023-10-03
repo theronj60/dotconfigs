@@ -27,6 +27,8 @@ alias nrd="npm run dev"
 alias watch="npm run watch"
 alias pa="php artisan"
 alias godot="nvim --listen godothost ."
+alias dps="docker ps"
+alias dpa="docker ps -a"
 # workplace =======================
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 

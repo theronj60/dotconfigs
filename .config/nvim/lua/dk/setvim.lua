@@ -16,14 +16,27 @@ vim.opt.mouse = ""
 --vim.opt.foldlevelstart=99
 --vim.opt.foldlevel=2
 vim.g.filetype = true
+
+local types = { "vue", "tsx", "js", "jsx", "astro", "json", "lua" }
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = types,
+	callback = function()
+		vim.opt.shiftwidth = 2
+		vim.opt.softtabstop = 2
+		vim.opt.tabstop = 2
+	end
+})
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
 -- plugin indent on
 vim.opt.updatetime = 50
 vim.opt.encoding = "UTF-8"
 --vim.opt.noshowmode = true
 vim.opt.laststatus = 2
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.hidden = true
