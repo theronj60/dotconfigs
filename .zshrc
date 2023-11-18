@@ -4,6 +4,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Created by `pipx` on 2021-08-02 22:07:37
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:/usr/local/go/bin"
 
 if [[ $OSTYPE == 'darwin'* ]]; then
