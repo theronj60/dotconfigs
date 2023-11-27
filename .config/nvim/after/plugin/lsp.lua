@@ -66,14 +66,17 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<space>f", function() vim.lsp.buf.format() end, opts)
 end
 
-vim.lsp.set_log_level 'trace'
+vim.lsp.set_log_level('trace')
 require('vim.lsp.log').set_format_func(vim.inspect)
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local util = require('lspconfig.util')
 local lspconfig = require('lspconfig')
 
 lspconfig['rust_analyzer'].setup({
 	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
         ["rust-analyzer"] = {
             imports = {
@@ -125,6 +128,7 @@ lsp.configure('gopls', {
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
 	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -134,24 +138,28 @@ lsp.configure('lua_ls', {
 	}
 })
 
+lsp.configure('intelephense', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "php", "blade" },
+	root_dir = util.root_pattern("composer.json", ".git") -- removed git for wordpress dev, , "wp-config.php"
+})
+
 lsp.configure('emmet_ls', {
 	on_attach = on_attach,
+	capabilities = capabilities,
 	filetypes = { "html", "vue", "php", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact",
 		"javascriptreact" },
 })
 
-lsp.configure('html', {
-	on_attach = on_attach,
-	filetypes = { "html", "php", "blade" }
-})
-
-lsp.configure('intelephense', {
-	on_attach = on_attach,
-	root_dir = util.root_pattern("composer.json", ".git") -- removed git for wordpress dev, , "wp-config.php"
-})
+-- lsp.configure('html', {
+-- 	on_attach = on_attach,
+-- 	filetypes = { "html", "php", "blade" }
+-- })
 
 lsp.configure('pylsp', {
 	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
 		pylsp = {
 			plugins = {
@@ -166,6 +174,7 @@ lsp.configure('pylsp', {
 
 lsp.configure('volar', {
 	on_attach = on_attach,
+	capabilities = capabilities,
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
 

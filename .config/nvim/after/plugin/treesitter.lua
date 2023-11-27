@@ -30,13 +30,11 @@ require 'nvim-treesitter.configs'.setup {
 		"vim",
 		"go"
 	},
-	context_commentstring = {
-		enable = true,
-	},
 	additional_vim_regex_highlighting = false,
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+
 parser_config.blade = {
 	install_info = {
 		url = "https://github.com/EmranMR/tree-sitter-blade",
@@ -46,7 +44,8 @@ parser_config.blade = {
 	filetype = "blade"
 }
 
--- vim.treesitter.language.register('html', 'blade') -- the someft filetype will use the python parser and queries.
--- local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
--- ft_to_parser.blade = "html"
+vim.g.skip_ts_context_commentstring_module = true
 require('ts_context_commentstring').setup {}
+-- local ft_to_parser = require "nvim-treesitter.parsers".filetype_to_parsername
+-- ft_to_parser.php = "blade"
+

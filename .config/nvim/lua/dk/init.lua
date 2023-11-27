@@ -50,8 +50,8 @@ vim.cmd([[
 	augroup autosourcing
 	    autocmd!
 	    autocmd BufWritePost $MYVIMRC source %
-		" autocmd BufRead,BufNewFile *.blade.php set filetype=blade
-		autocmd BufRead,BufEnter *.astro set filetype=astro
+		" autocmd BufRead,BufNewFile *.blade.php set ft=blade
+		autocmd BufRead,BufEnter *.astro set ft=astro
 		" Trigger `autoread` when files changes on disk
 		autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
 			\ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
