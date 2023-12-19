@@ -90,11 +90,11 @@ prompt typewritten
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
 # else
-#     if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "/opt/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/opt/anaconda3/bin:$PATH"
-#     fi
+if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+	. "/opt/anaconda3/etc/profile.d/conda.sh"
+else
+	export PATH="/opt/anaconda3/bin:$PATH"
+fi
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<

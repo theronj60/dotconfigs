@@ -78,26 +78,26 @@ lspconfig['rust_analyzer'].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
-        ["rust-analyzer"] = {
-            imports = {
-                granularity = {
-                    group = "module",
-                },
-                prefix = "self",
-            },
-            cargo = {
-                buildScripts = {
-                    enable = true,
-                },
-            },
-            procMacro = {
-                enable = true
-            },
+		["rust-analyzer"] = {
+			imports = {
+				granularity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true
+			},
 			checkOnSave = {
 				command = "clippy" -- default is check
 			},
-        }
-    },
+		}
+	},
 	diagnostics = {
 		enable = true,
 	},
@@ -142,20 +142,21 @@ lsp.configure('intelephense', {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "php", "blade" },
-	root_dir = util.root_pattern("composer.json", ".git") -- removed git for wordpress dev, , "wp-config.php"
+	root_dir = util.root_pattern("composer.json", ".git")
 })
 
 lsp.configure('emmet_ls', {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "vue", "php", "blade", "css", "less", "postcss", "sass", "scss", "typescriptreact",
+	filetypes = { "html", "vue", "php", "blade", "typescriptreact",
 		"javascriptreact" },
 })
 
--- lsp.configure('html', {
--- 	on_attach = on_attach,
--- 	filetypes = { "html", "php", "blade" }
--- })
+lsp.configure('html', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "html", "php", "blade" }
+})
 
 lsp.configure('pylsp', {
 	on_attach = on_attach,
@@ -172,12 +173,33 @@ lsp.configure('pylsp', {
 	}
 })
 
+lsp.configure('clangd', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp.configure('volar', {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 })
 
+lsp.configure('tailwindcss', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp.configure('cssls', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		css = {
+			lint = {
+				unknownAtRules = "ignore"
+			}
+		}
+	}
+})
 
 lsp.setup()
 
