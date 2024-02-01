@@ -31,7 +31,6 @@ return require('packer').startup(function(use)
 	use('habamax/vim-godot')
 	use('andweeb/presence.nvim')
 	use('tpope/vim-dispatch')
-	use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
 	use {
 		'terrortylor/nvim-comment',
 		requires = {

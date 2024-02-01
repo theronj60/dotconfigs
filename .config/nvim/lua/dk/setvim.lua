@@ -17,7 +17,8 @@ vim.opt.mouse = ""
 --vim.opt.foldlevel=2
 vim.g.filetype = true
 
-local types = { "vue", "tsx", "js", "jsx", "astro", "json", "lua" }
+-- local types = { "vue", "tsx", "js", "jsx", "astro", "json", "lua" }
+local types = { "json", "lua" }
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = types,

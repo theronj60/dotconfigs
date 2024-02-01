@@ -125,7 +125,6 @@ lsp.configure('gopls', {
 	}
 })
 
--- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -155,7 +154,7 @@ lsp.configure('emmet_ls', {
 lsp.configure('html', {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "php", "blade" }
+	filetypes = { "html", "php", "blade", "typescriptreact" }
 })
 
 lsp.configure('pylsp', {

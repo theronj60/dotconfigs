@@ -3,7 +3,7 @@
 require'nvim_comment'.setup {
 	comment_empty = false,
 	hook = function()
-		if vim.api.nvim_buf_get_option(0, "filetype") == "tsx" then
+		if vim.api.nvim_buf_get_option(0, "filetype") == "typescriptreact" then
 			-- vim.api.nvim_buf_set_option(0, "commentstring", "<!-- %s -->")
 			require("ts_context_commentstring.internal").update_commentstring()
 		end
@@ -23,3 +23,5 @@ require'nvim_comment'.setup {
 		-- end
 	end
 }
+
+-- require("ts_context_commentstring").setup{}
