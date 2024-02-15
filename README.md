@@ -2,7 +2,6 @@
 
 ## Alacritty
 
-Made the switch to Alacritty from Iterm2
 [Alacritty](https://alacritty.org/)
 Used the default [config](https://github.com/alacritty/alacritty/blob/master/alacritty.yml) example to get started, just uncomment the sections you need and setup.
 
@@ -17,9 +16,10 @@ alias.zsh is usually found or created in the oh-my-zsh custom folder if you
 PDE - [Neovim](https://neovim.io) <br>
 Neovim was installed through [Homebrew](https://brew.sh/) with ``brew install neovim`` <br>
 The package manager being used is [packer.nvim](https://github.com/wbthomason/packer.nvim)
+The LSP being used is [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 ## Tmux
 Plugins and settings found in [tmux-config](https://github.com/theronj60/dotconfigs/blob/master/.tmux.conf)
 
 ## Theme
-Theme is [Cattpuccin-Mocha](https://github.com/catppuccin/nvim)
+Theme is OneDark variant pulled from [Jess Archer's config](https://github.com/jessarcher/onedark.nvim)
