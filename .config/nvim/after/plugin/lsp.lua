@@ -148,13 +148,13 @@ lsp.configure('emmet_ls', {
 	on_attach = on_attach,
 	capabilities = capabilities,
 	filetypes = { "html", "vue", "php", "blade", "typescriptreact",
-		"javascriptreact" },
+		"javascriptreact", "astro" },
 })
 
 lsp.configure('html', {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "html", "php", "blade", "typescriptreact" }
+	filetypes = { "html", "php", "blade", "typescriptreact", "astro" }
 })
 
 lsp.configure('pylsp', {
@@ -180,13 +180,19 @@ lsp.configure('clangd', {
 lsp.configure('volar', {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "astro" },
 })
 
 lsp.configure('tailwindcss', {
 	on_attach = on_attach,
 	capabilities = capabilities,
+	filetypes = { "html", "astro", "php", "blade", "vue", "typescriptreact" }
 })
+
+-- lsp.configure('astro', {
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 lsp.configure('cssls', {
 	on_attach = on_attach,
@@ -199,6 +205,16 @@ lsp.configure('cssls', {
 		}
 	}
 })
+
+lsp.configure('terraformls', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+-- lsp.configure('clojure_lsp', {
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
 
 lsp.setup()
 
