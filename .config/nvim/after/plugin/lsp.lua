@@ -211,6 +211,11 @@ lsp.configure('terraformls', {
 	capabilities = capabilities,
 })
 
+lsp.configure('pylsp', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 -- lsp.configure('clojure_lsp', {
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities,

@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
 		},
 	}
 	use {
-		'nvim-tree/nvim-web-devicons',
+		'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat',
 	}
 	use {
 		'airblade/vim-gitgutter',
