@@ -7,18 +7,22 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:/usr/local/go/bin"
 
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
+
 if [[ $OSTYPE == 'darwin'* ]]; then
 	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 	export PATH="/opt/homebrew/bin:$PATH"
 	export PATH="/opt/homebrew/sbin:$PATH"
 	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 	export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+	eval "$(rbenv init - zsh)"
 fi
 
 path+="$HOME/Library/Python/3.9/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-eval "$(rbenv init - zsh)"
 
 ulimit -S -n 4096
 
@@ -79,10 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # Alias are being loaded from the /.oh-my-zsh/custom folder.
 
 fpath=($fpath "$HOME/.zfunctions")
-
-# Set typewritten ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt typewritten
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

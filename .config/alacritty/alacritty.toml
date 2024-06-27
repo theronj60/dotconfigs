@@ -1,0 +1,60 @@
+[colors.cursor]
+cursor = "#528bff"
+text = "CellBackground"
+
+[colors.normal]
+black = "#5c6370"
+blue = "#61afef"
+cyan = "#56b6c2"
+green = "#98c379"
+magenta = "#c678dd"
+red = "#e06c75"
+white = "#828997"
+yellow = "#e5c07b"
+
+[colors.primary]
+background = "#282c34"
+foreground = "#abb2bf"
+
+[colors.selection]
+background = "#3e4451"
+text = "CellForeground"
+
+[cursor.style]
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.5
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Medium"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "R"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command|Control"
+
+[scrolling]
+history = 10000
+
+[window]
+decorations = "buttonless"
+opacity = 0.97
+
+[window.padding]
+x = 16
+y = 8

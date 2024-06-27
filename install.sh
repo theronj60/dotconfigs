@@ -11,13 +11,20 @@
 # $HOME/.local/bin
 # link sh files to bin
 
+# git
+
+# nvm
+#
+#
+# nvim
+
 if [[ $OSTYPE == 'darwin'* ]]; then
 	brew install git
 	brew install --HEAD neovim echo 'macOS'
 else
 	add-apt-repository ppa:git-core/ppa &&\
 	apt update &&\
-	apt install git
+	apt install git &&\
 fi
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)" &&\
