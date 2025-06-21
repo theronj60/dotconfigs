@@ -177,10 +177,35 @@ lsp.configure('clangd', {
 	capabilities = capabilities,
 })
 
+-- If you are using mason.nvim, you can get the ts_plugin_path like this
+local mason_registry = require('mason-registry')
+local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+
+-- local vue_language_server_path = '/path/to/@vue/language-server'
+
+-- local lspconfig = require('lspconfig')
+
+lsp.configure('ts_ls', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      },
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+})
+
+-- No need to set `hybridMode` to `true` as it's the default value
+-- lspconfig.volar.setup {}
+
 lsp.configure('volar', {
 	on_attach = on_attach,
 	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "astro" },
 })
 
 lsp.configure('tailwindcss', {
@@ -212,6 +237,11 @@ lsp.configure('terraformls', {
 })
 
 lsp.configure('pylsp', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp.configure('svelte', {
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

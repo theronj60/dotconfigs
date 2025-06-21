@@ -1,22 +1,22 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 # Created by `pipx` on 2021-08-02 22:07:37
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:/usr/local/go/bin"
 
-# Set typewritten ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt typewritten
-
 if [[ $OSTYPE == 'darwin'* ]]; then
-	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 	export PATH="/opt/homebrew/bin:$PATH"
 	export PATH="/opt/homebrew/sbin:$PATH"
+	# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib -lunwind"
+	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib/unwind -lunwind"
+
 	export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 	export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+	export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 	eval "$(rbenv init - zsh)"
 fi
 
@@ -84,6 +84,10 @@ source $ZSH/oh-my-zsh.sh
 
 fpath=($fpath "$HOME/.zfunctions")
 
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 # __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -99,7 +103,6 @@ fi
 # unset __conda_setup
 # <<< conda initialize <<<
 
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/theronjoe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/theronjoe/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -108,3 +111,8 @@ if [ -f '/Users/theronjoe/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
